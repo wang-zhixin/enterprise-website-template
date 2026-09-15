@@ -25,7 +25,7 @@ const Footer = () => {
       </div>
 
       <div className="mx-auto w-full max-w-[1600px] px-6 sm:px-10 lg:px-16 xl:px-24">
-        <div className="grid gap-12 border-b border-white/15 py-20 sm:py-24 lg:grid-cols-[1fr_auto] lg:items-end lg:gap-20">
+        {/* <div className="grid gap-12 border-b border-white/15 py-20 sm:py-24 lg:grid-cols-[1fr_auto] lg:items-end lg:gap-20">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary">
               Business Cooperation
@@ -46,7 +46,7 @@ const Footer = () => {
             提交合作需求
             <span aria-hidden="true">↗</span>
           </Link>
-        </div>
+        </div> */}
 
         <div className="grid gap-12 py-14 lg:grid-cols-[0.8fr_1.2fr] lg:items-start lg:gap-24">
           <div>
