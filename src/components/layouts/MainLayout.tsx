@@ -9,13 +9,13 @@ interface MainLayoutProps {
   description?: string;
 }
 
-const MainLayout = ({ children, title = 'Technology Company Official Website', description = 'Welcome to our website · Demo only · EdgeOne Makers' }: MainLayoutProps) => {
+const MainLayout = ({ children, title = '睐智人力', description = '专业人力资源外包服务机构' }: MainLayoutProps) => {
   return (
     <div className="min-h-screen bg-white">
       <Head>
-        <title>{title} | EdgeOne Makers</title>
+        <title>{title}</title>
         <meta name="description" content={description} />
-        <meta name="keywords" content="EdgeOne Makers, Demo only" />
+        <meta name="keywords" content="睐智人力,HRO岗位外包,RPO招聘外包,劳务派遣,灵活用工,人事代理" />
       </Head>
 
       <Navbar />
@@ -29,4 +29,4 @@ const MainLayout = ({ children, title = 'Technology Company Official Website', d
   );
 };
 
-export default MainLayout; 
+export default MainLayout;

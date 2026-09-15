@@ -2,7 +2,6 @@ import { Fragment } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import { NavLink } from './NavLink';
-import { Button } from '../ui/Button';
 import { Logo } from '../ui/Logo';
 import { IconButton } from '../ui/IconButton';
 import { NavigationItem } from '@/config/navigation';
@@ -12,10 +11,6 @@ interface MobileMenuProps {
   onClose: () => void;
   navigation: NavigationItem[];
   siteName: string;
-  getStartedConfig: {
-    text: string;
-    href: string;
-  };
 }
 
 export const MobileMenu = ({
@@ -23,7 +18,6 @@ export const MobileMenu = ({
   onClose,
   navigation,
   siteName,
-  getStartedConfig,
 }: MobileMenuProps) => {
   return (
     <Transition.Root show={isOpen} as={Fragment}>
@@ -66,21 +60,12 @@ export const MobileMenu = ({
                       <NavLink
                         key={item.name}
                         href={item.href}
-                        className="block px-3 py-2 text-base"
+                        variant="mobile"
                         onClick={onClose}
                       >
                         {item.name}
                       </NavLink>
                     ))}
-                  </div>
-                  <div className="py-6">
-                    <Button
-                      href={getStartedConfig.href}
-                      className="w-full justify-center"
-                      onClick={onClose}
-                    >
-                      {getStartedConfig.text}
-                    </Button>
                   </div>
                 </div>
               </Dialog.Panel>
@@ -90,4 +75,4 @@ export const MobileMenu = ({
       </Dialog>
     </Transition.Root>
   );
-}; 
+};

@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
-import Head from 'next/head';
-import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
+import CompanyOverview from '../components/CompanyOverview';
+import PartnerCompanies from '../components/PartnerCompanies';
 import Features from '../components/Features';
 import CaseStudies from '../components/CaseStudies';
 import Testimonials from '../components/Testimonials';
@@ -11,29 +11,23 @@ import MainLayout from '../components/layouts/MainLayout';
 const HomePage: NextPage = () => {
   return (
     <MainLayout
-      title="Technology Company Official Website"
-      description="Welcome to our website"
+      title="睐智人力 - 专业人力资源外包服务"
+      description="提供HRO岗位外包、RPO批量招聘、中高端猎头、人事代理、劳务派遣、灵活用工和员工福利服务"
     >
       <div className="min-h-screen bg-white">
-        <Head>
-          <title>Company Website Template - Professional Enterprise Solutions</title>
-          <meta name="description" content="Providing professional website solutions for enterprises, facilitating digital transformation" />
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
-
-        <Navbar />
-        
-        <main>
+        <div>
           <Hero />
+          <CompanyOverview />
+          <PartnerCompanies />
           <Features />
           <CaseStudies />
           <Testimonials />
           <Careers />
-        </main>
+        </div>
 
       </div>
     </MainLayout>
   );
 };
 
-export default HomePage; 
+export default HomePage;

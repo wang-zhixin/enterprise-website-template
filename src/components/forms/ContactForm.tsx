@@ -10,10 +10,12 @@ interface FormData {
 
 interface ContactFormProps {
   formspreeId?: string;
+  variant?: 'default' | 'minimal';
 }
 
-export const ContactForm: React.FC<ContactFormProps> = ({ 
-  formspreeId 
+export const ContactForm: React.FC<ContactFormProps> = ({
+  formspreeId,
+  variant = 'default',
 }) => {
   const [formData, setFormData] = useState<FormData>({
     name: '',
@@ -23,6 +25,10 @@ export const ContactForm: React.FC<ContactFormProps> = ({
     message: '',
   });
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const isMinimal = variant === 'minimal';
+  const inputClassName = isMinimal
+    ? 'mt-2 block min-h-14 w-full border border-[#d8d0c8] bg-white px-4 text-base text-[#082f4f] outline-none placeholder:text-slate-400 focus:border-primary focus:ring-2 focus:ring-primary'
+    : 'mt-2 block min-h-12 w-full border-0 bg-white px-4 text-base text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary';
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -60,28 +66,28 @@ export const ContactForm: React.FC<ContactFormProps> = ({
 
   if (status === 'success') {
     return (
-      <div className="mt-16 rounded-md bg-green-50 p-6 text-center">
-        <h3 className="text-lg font-semibold text-green-800">Thank you!</h3>
-        <p className="mt-2 text-green-700">Your message has been sent successfully. We will get back to you soon.</p>
+      <div className="mt-10 border border-emerald-200 bg-emerald-50 p-6 text-center" role="status">
+        <h3 className="text-lg font-semibold text-emerald-900">需求已提交</h3>
+        <p className="mt-2 text-emerald-700">感谢您的信任，我们会尽快与您联系。</p>
         <button
           onClick={() => setStatus('idle')}
-          className="mt-4 text-sm font-medium text-green-600 hover:text-green-500"
+          className="mt-4 min-h-11 text-sm font-semibold text-emerald-700 hover:text-emerald-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-700"
         >
-          Send another message
+          再次提交
         </button>
       </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="mt-16">
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+    <form onSubmit={handleSubmit} className={isMinimal ? 'm-0' : 'mt-10'}>
+      <div className={isMinimal ? 'grid grid-cols-1 gap-x-4 gap-y-6 sm:grid-cols-2' : 'grid grid-cols-1 gap-x-10 gap-y-8 sm:grid-cols-2'}>
         <div>
           <label
             htmlFor="name"
-            className="block text-sm font-semibold leading-6 text-gray-900"
+            className={isMinimal ? 'block text-sm font-semibold leading-6 text-[#082f4f]' : 'block text-base font-semibold leading-7 text-gray-900'}
           >
-            Name
+            姓名
           </label>
           <input
             type="text"
@@ -89,15 +95,18 @@ export const ContactForm: React.FC<ContactFormProps> = ({
             id="name"
             value={formData.name}
             onChange={handleChange}
-            className="mt-2 block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+            autoComplete="name"
+            required
+            placeholder="请输入姓名"
+            className={inputClassName}
           />
         </div>
         <div>
           <label
             htmlFor="email"
-            className="block text-sm font-semibold leading-6 text-gray-900"
+            className={isMinimal ? 'block text-sm font-semibold leading-6 text-[#082f4f]' : 'block text-base font-semibold leading-7 text-gray-900'}
           >
-            Email
+            邮箱
           </label>
           <input
             type="email"
@@ -105,15 +114,17 @@ export const ContactForm: React.FC<ContactFormProps> = ({
             id="email"
             value={formData.email}
             onChange={handleChange}
-            className="mt-2 block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+            autoComplete="email"
+            placeholder="请输入常用邮箱"
+            className={inputClassName}
           />
         </div>
         <div>
           <label
             htmlFor="phone"
-            className="block text-sm font-semibold leading-6 text-gray-900"
+            className={isMinimal ? 'block text-sm font-semibold leading-6 text-[#082f4f]' : 'block text-base font-semibold leading-7 text-gray-900'}
           >
-            Phone
+            联系电话
           </label>
           <input
             type="tel"
@@ -121,15 +132,18 @@ export const ContactForm: React.FC<ContactFormProps> = ({
             id="phone"
             value={formData.phone}
             onChange={handleChange}
-            className="mt-2 block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+            autoComplete="tel"
+            required
+            placeholder="请输入联系电话"
+            className={inputClassName}
           />
         </div>
         <div>
           <label
             htmlFor="company"
-            className="block text-sm font-semibold leading-6 text-gray-900"
+            className={isMinimal ? 'block text-sm font-semibold leading-6 text-[#082f4f]' : 'block text-base font-semibold leading-7 text-gray-900'}
           >
-            Company
+            企业名称
           </label>
           <input
             type="text"
@@ -137,15 +151,18 @@ export const ContactForm: React.FC<ContactFormProps> = ({
             id="company"
             value={formData.company}
             onChange={handleChange}
-            className="mt-2 block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+            autoComplete="organization"
+            required
+            placeholder="请输入企业名称"
+            className={inputClassName}
           />
         </div>
         <div className="sm:col-span-2">
           <label
             htmlFor="message"
-            className="block text-sm font-semibold leading-6 text-gray-900"
+            className={isMinimal ? 'block text-sm font-semibold leading-6 text-[#082f4f]' : 'block text-base font-semibold leading-7 text-gray-900'}
           >
-            Message
+            需求说明
           </label>
           <textarea
             name="message"
@@ -153,26 +170,36 @@ export const ContactForm: React.FC<ContactFormProps> = ({
             rows={4}
             value={formData.message}
             onChange={handleChange}
-            className="mt-2 block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+            required
+            placeholder="请简要描述岗位规模、服务城市和到岗时间"
+            className={
+              isMinimal
+                ? 'mt-2 block min-h-32 w-full resize-y border border-[#d8d0c8] bg-white px-4 py-3 text-base text-[#082f4f] outline-none placeholder:text-slate-400 focus:border-primary focus:ring-2 focus:ring-primary'
+                : 'mt-2 block w-full border-0 bg-white px-4 py-3 text-base text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary'
+            }
           />
         </div>
       </div>
       {status === 'error' && (
-        <div className="mt-4 rounded-md bg-red-50 p-4">
-          <p className="text-sm text-red-700">
-            Something went wrong. Please try again later.
+        <div className="mt-4 border border-red-200 bg-red-50 p-4" role="alert">
+          <p className="text-base text-red-700">
+            提交失败，请稍后重试。
           </p>
         </div>
       )}
-      <div className="mt-10">
+      <div className={isMinimal ? 'mt-4' : 'mt-10'}>
         <button
           type="submit"
           disabled={status === 'submitting'}
-          className="block w-full rounded-md bg-primary px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary disabled:opacity-50 disabled:cursor-not-allowed"
+          className={
+            isMinimal
+              ? 'flex min-h-16 w-full items-center justify-center bg-primary px-6 text-base font-semibold text-white transition-colors hover:bg-[#af3c34] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary disabled:cursor-not-allowed disabled:opacity-50 sm:px-7'
+              : 'block min-h-12 w-full bg-primary px-5 text-center text-base font-semibold text-white transition-colors hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary disabled:cursor-not-allowed disabled:opacity-50'
+          }
         >
-          {status === 'submitting' ? 'Submitting...' : 'Submit'}
+          {status === 'submitting' ? '提交中…' : '提交'}
         </button>
       </div>
     </form>
   );
-}; 
+};

@@ -135,7 +135,7 @@
 
   .list-check li::before {
     @apply h-5 w-5 flex-none mt-1;
-    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23F76C5E'%3E%3Cpath fill-rule='evenodd' d='M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z' clip-rule='evenodd'/%3E%3C/svg%3E");
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23CC4A40'%3E%3Cpath fill-rule='evenodd' d='M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z' clip-rule='evenodd'/%3E%3C/svg%3E");
   }
 
  
@@ -185,4 +185,87 @@
   .text-balance {
     text-wrap: balance;
   }
-} 
+}
+
+@keyframes brand-signal-sweep {
+  0%, 12% {
+    transform: translateX(-140%);
+    opacity: 0;
+  }
+
+  22%, 72% {
+    opacity: 1;
+  }
+
+  88%, 100% {
+    transform: translateX(620%);
+    opacity: 0;
+  }
+}
+
+@keyframes brand-orbit-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes partner-logo-marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.brand-signal {
+  position: relative;
+  overflow: hidden;
+}
+
+.brand-signal::after {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 18%;
+  height: 2px;
+  content: '';
+  background: linear-gradient(90deg, transparent, #CC4A40, transparent);
+  animation: brand-signal-sweep 8s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+.brand-orbit::after {
+  position: absolute;
+  inset: -4px;
+  border-radius: 9999px;
+  content: '';
+  background: conic-gradient(from 0deg, transparent 0 88%, #CC4A40 96%, transparent 100%);
+  mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 0);
+  animation: brand-orbit-spin 18s linear infinite;
+}
+
+.partner-logo-track {
+  animation: partner-logo-marquee 72s linear infinite;
+}
+
+.partner-logo-track-reverse {
+  animation-direction: reverse;
+  animation-duration: 80s;
+}
+
+.partner-logo-row:hover .partner-logo-track {
+  animation-play-state: paused;
+}
+
+.partner-logo-row {
+  scrollbar-width: none;
+}
+
+.partner-logo-row::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-signal::after,
+  .brand-orbit::after,
+  .partner-logo-track {
+    animation: none;
+  }
+}

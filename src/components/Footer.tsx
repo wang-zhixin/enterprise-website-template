@@ -1,106 +1,95 @@
 import Link from 'next/link';
+import { Logo } from './ui/Logo';
+import { siteConfig } from '@/config/navigation';
 
-interface IconProps extends React.SVGProps<SVGSVGElement> {
-  'aria-hidden'?: boolean;
-}
+const serviceLinks = [
+  'HRO岗位外包',
+  'RPO批量招聘流程外包',
+  '中高端猎头',
+  '人事代理',
+  '劳务派遣',
+  '灵活用工',
+  '员工福利',
+];
 
-const navigation = {
-  support: [
-    { name: 'Contact Us', href: '/contact' },
-  ],
-  company: [
-    { name: 'About Us', href: '/about' },
-    { name: 'Join Us', href: '/careers' }
-  ],
-  social: [
-    {
-      name: 'Weibo',
-      href: 'https://weibo.com/company',
-      icon: (props: IconProps) => (
-        <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
-          <path d="M20.194 14.32c0 3.66-4.54 6.634-10.142 6.634-5.603 0-10.142-2.974-10.142-6.634 0-3.66 4.54-6.634 10.142-6.634 5.603 0 10.142 2.974 10.142 6.634zM10.052 7.04c-4.187 0-7.573 2.228-7.573 4.978 0 2.75 3.386 4.978 7.573 4.978 4.187 0 7.573-2.228 7.573-4.978 0-2.75-3.386-4.978-7.573-4.978z" />
-        </svg>
-      ),
-    },
-    {
-      name: 'WeChat',
-      href: '#',
-      icon: (props: IconProps) => (
-        <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
-          <path d="M8.516 13.545c-.865 0-1.565-.7-1.565-1.565s.7-1.565 1.565-1.565 1.565.7 1.565 1.565-.7 1.565-1.565 1.565zm4.968 0c-.865 0-1.565-.7-1.565-1.565s.7-1.565 1.565-1.565 1.565.7 1.565 1.565-.7 1.565-1.565 1.565zm2.484-5.565C15.968 4.98 13.365 3 10.052 3 6.165 3 3 5.71 3 9.055c0 1.89.92 3.56 2.35 4.66l-.59 1.77 2.06-1.03c.73.2 1.5.31 2.31.31.21 0 .42-.01.63-.02-.13-.44-.2-.9-.2-1.38 0-2.97 2.87-5.38 6.41-5.38.39 0 .77.03 1.14.09C16.96 6.66 15.97 5.71 14.52 5.71z" />
-        </svg>
-      ),
-    },
-  ],
-};
+const qualifications = ['人力资源服务许可', '劳务派遣经营许可', 'AAA企业信用等级'];
 
 const Footer = () => {
   return (
-    <footer className="bg-footer" aria-labelledby="footer-heading">
-      <h2 id="footer-heading" className="sr-only">
-        Footer
-      </h2>
-      <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
-        <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-          <div className="space-y-8">
-            <Link href="/" className="text-2xl font-bold text-white">
-              Enterprise Website
-            </Link>
-            <p className="text-sm leading-6 text-white">
-              Building professional enterprise website solutions, empowering corporate digital transformation
+    <footer className="relative isolate overflow-hidden bg-[#031827] text-white" aria-labelledby="footer-heading">
+      <div
+        className="pointer-events-none absolute -bottom-16 -right-10 -z-10 text-[10rem] font-semibold leading-none tracking-[-0.1em] text-white/[0.025] sm:text-[18rem] lg:text-[26rem]"
+        aria-hidden="true"
+      >
+        RUISE
+      </div>
+
+      <div className="mx-auto w-full max-w-[1600px] px-6 sm:px-10 lg:px-16 xl:px-24">
+        <div className="grid gap-12 border-b border-white/15 py-20 sm:py-24 lg:grid-cols-[1fr_auto] lg:items-end lg:gap-20">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary">
+              Business Cooperation
             </p>
-            <div className="flex space-x-6">
-              {navigation.social.map((item) => (
+            <h2
+              id="footer-heading"
+              className="mt-7 max-w-5xl text-4xl font-semibold leading-[1.12] tracking-[-0.05em] text-white sm:text-5xl lg:text-6xl"
+            >
+              让用工更稳，
+              <br />
+              让交付更快
+            </h2>
+          </div>
+          <Link
+            href="/contact"
+            className="inline-flex min-h-14 w-fit items-center gap-6 bg-primary px-8 text-base font-semibold tracking-[0.04em] text-white transition-colors hover:bg-white hover:text-[#082f4f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+          >
+            提交合作需求
+            <span aria-hidden="true">↗</span>
+          </Link>
+        </div>
+
+        <div className="grid gap-12 py-14 lg:grid-cols-[0.8fr_1.2fr] lg:items-start lg:gap-24">
+          <div>
+            <Logo text={siteConfig.name} variant="white" />
+            <p className="mt-7 max-w-md text-base leading-8 text-white/55">
+              具备人力资源服务许可及劳务派遣业务经营许可，为企业提供全方位、综合性、一站式人力资源服务。
+            </p>
+            <p className="mt-7 text-sm font-semibold tracking-[0.12em] text-primary">
+              Rise your business through HRO
+            </p>
+          </div>
+
+          <div>
+            <p className="text-sm font-semibold tracking-[0.14em] text-white/45">CORE SERVICES</p>
+            <div className="mt-6 flex flex-wrap gap-x-8 gap-y-4">
+              {serviceLinks.map((item) => (
                 <Link
-                  key={item.name}
-                  href={item.href}
-                  className="text-white hover:text-white"
+                  key={item}
+                  href="/services"
+                  className="text-base text-white/55 transition-colors hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
                 >
-                  <span className="sr-only">{item.name}</span>
+                  {item}
                 </Link>
               ))}
             </div>
-          </div>
-          <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
-            <div className="md:grid md:grid-cols-2 md:gap-8">
-            
-              <div className="mt-10 md:mt-0">
-                <h3 className="text-sm font-semibold leading-6 text-white">Support</h3>
-                <ul role="list" className="mt-6 space-y-4 list-none">
-                  {navigation.support.map((item) => (
-                    <li key={item.name}>
-                      <Link href={item.href} className="text-sm leading-6 text-white hover:text-white">
-                        {item.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-            <div className="md:grid md:grid-cols-2 md:gap-8">
-              <div>
-                <h3 className="text-sm font-semibold leading-6 text-white">Company</h3>
-                <ul role="list" className="mt-6 space-y-4 list-none">
-                  {navigation.company.map((item) => (
-                    <li key={item.name}>
-                      <Link href={item.href} className="text-sm leading-6 text-white hover:text-white">
-                        {item.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            <div className="mt-10 flex flex-wrap gap-x-8 gap-y-4 border-t border-white/10 pt-7">
+              {qualifications.map((item) => (
+                <span key={item} className="inline-flex items-center gap-3 text-sm text-white/50">
+                  <span className="h-1 w-1 bg-primary" aria-hidden="true" />
+                  {item}
+                </span>
+              ))}
             </div>
           </div>
         </div>
-        <div className="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24">
-          <p className="text-xs leading-5 text-white">
-            &copy; {new Date().getFullYear()} Enterprise Website. All rights reserved.
-          </p>
+
+        <div className="flex flex-col gap-3 border-t border-white/10 py-8 text-sm text-white/40 sm:flex-row sm:items-center sm:justify-between">
+          <p>&copy; {new Date().getFullYear()} 睐智人力资源（上海）有限公司</p>
+          <p>旗下品牌：睐智人力 · 职得邦</p>
         </div>
       </div>
     </footer>
   );
 };
 
-export default Footer; 
+export default Footer;
