@@ -22,7 +22,7 @@ export const NavLink = ({
   const isActive = router.pathname === href || router.pathname.startsWith(`${href}/`);
 
   const baseStyles = {
-    desktop: 'text-base font-semibold leading-6 transition-colors duration-200',
+    desktop: 'text-lg font-normal leading-7 transition-colors duration-200',
     mobile: '-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 transition-colors duration-200',
   };
 

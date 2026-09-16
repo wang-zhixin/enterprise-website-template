@@ -14,6 +14,8 @@ const MainLayout = ({ children, title = '睐智人力', description = '专业人
     <div className="min-h-screen bg-white">
       <Head>
         <title>{title}</title>
+        <link rel="icon" type="image/png" href="/ruise-favicon.png" />
+        <link rel="shortcut icon" type="image/png" href="/ruise-favicon.png" />
         <meta name="description" content={description} />
         <meta name="keywords" content="睐智人力,HRO岗位外包,RPO招聘外包,劳务派遣,灵活用工,人事代理" />
       </Head>

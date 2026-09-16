@@ -48,7 +48,7 @@ const Navbar = () => {
           />
         </div>
 
-        <div className="hidden items-center gap-x-10 lg:flex xl:gap-x-12">
+        <div className="hidden items-center gap-x-8 lg:flex xl:gap-x-10">
           {navigation.map((item) => (
             <NavLink key={item.name} href={item.href} inverted={isOverHero}>
               {item.name}
