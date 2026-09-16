@@ -98,7 +98,7 @@ const CompanyOverview = () => {
       className="relative isolate overflow-hidden bg-[#061f34]"
       aria-labelledby="company-overview-title"
     >
-      <div className="relative min-h-[860px] overflow-hidden sm:min-h-[920px] lg:min-h-[980px]">
+      <div className="relative min-h-[720px] overflow-hidden sm:min-h-[760px] 2xl:min-h-[980px]">
         <Image
           src="/1.jpg"
           alt="睐智人力上海总部办公空间"
@@ -109,13 +109,13 @@ const CompanyOverview = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-[#031b2d]/95 via-[#031b2d]/58 to-[#031b2d]/10" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#031b2d]/90 via-transparent to-transparent" />
         <div
-          className="pointer-events-none absolute right-[-0.08em] top-1/2 -translate-y-1/2 text-[13rem] font-semibold leading-none tracking-[-0.1em] text-white/[0.07] sm:text-[21rem] lg:text-[31rem]"
+          className="pointer-events-none absolute right-[-0.08em] top-1/2 -translate-y-1/2 text-[13rem] font-semibold leading-none tracking-[-0.1em] text-white/[0.07] sm:text-[21rem] 2xl:text-[31rem]"
           aria-hidden="true"
         >
           2017
         </div>
 
-        <div className="relative mx-auto flex min-h-[860px] w-full max-w-[1800px] items-end px-6 pb-16 pt-32 text-white sm:min-h-[920px] sm:px-10 sm:pb-20 lg:min-h-[980px] lg:px-16 lg:pb-24 xl:px-24">
+        <div className="relative mx-auto flex min-h-[720px] w-full max-w-[1800px] items-end px-6 pb-16 pt-28 text-white sm:min-h-[760px] sm:px-10 sm:pb-20 lg:px-16 lg:pb-20 2xl:min-h-[980px] 2xl:px-24 2xl:pb-24 2xl:pt-32">
           <div className="max-w-4xl">
             <div className="flex items-center gap-4">
               <span className="h-px w-14 bg-primary" aria-hidden="true" />
@@ -125,7 +125,7 @@ const CompanyOverview = () => {
             </div>
             <h2
               id="company-overview-title"
-              className="mt-8 text-4xl font-semibold leading-[1.12] tracking-[-0.05em] text-white sm:text-5xl lg:text-6xl"
+              className="mt-8 text-4xl font-semibold leading-[1.12] tracking-[-0.05em] text-white sm:text-5xl 2xl:text-6xl"
             >
               立足上海，
               <br />
@@ -148,7 +148,7 @@ const CompanyOverview = () => {
         </div>
       </div>
 
-      <div className="relative bg-[#f0f2f1] px-6 sm:px-10 lg:px-16 xl:px-24">
+      <div className="relative bg-[#f0f2f1] px-6 sm:px-10 lg:px-16 2xl:px-24">
         <div
           className="absolute left-0 top-0 h-1 w-[38%] bg-primary"
           aria-hidden="true"

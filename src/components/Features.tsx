@@ -12,20 +12,20 @@ const services = [
 
 const Features = () => {
   return (
-    <section className="relative isolate overflow-hidden bg-[#f1f4f3] px-6 py-24 sm:px-10 sm:py-32 lg:px-16 lg:py-40 xl:px-24">
+    <section className="relative isolate overflow-hidden bg-[#f1f4f3] px-6 py-24 sm:px-10 sm:py-32 lg:px-16 2xl:px-24 2xl:py-40">
       <div
-        className="pointer-events-none absolute -left-8 top-20 -z-10 text-[9rem] font-semibold leading-none tracking-[-0.08em] text-white sm:text-[16rem] lg:text-[23rem]"
+        className="pointer-events-none absolute -left-8 top-20 -z-10 text-[9rem] font-semibold leading-none tracking-[-0.08em] text-white sm:text-[16rem] 2xl:text-[23rem]"
         aria-hidden="true"
       >
         07
       </div>
 
-      <div className="mx-auto grid w-full max-w-[1600px] gap-16 lg:grid-cols-[0.78fr_1.22fr] lg:gap-24 xl:gap-32">
+      <div className="mx-auto grid w-full max-w-[1600px] gap-16 lg:grid-cols-[0.78fr_1.22fr] 2xl:gap-24">
         <div className="lg:sticky lg:top-32 lg:h-fit">
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary">
             Service Portfolio
           </p>
-          <h2 className="mt-7 max-w-xl text-4xl font-semibold leading-[1.12] tracking-[-0.05em] text-[#082f4f] sm:text-5xl lg:text-6xl">
+          <h2 className="mt-7 max-w-xl text-4xl font-semibold leading-[1.12] tracking-[-0.05em] text-[#082f4f] sm:text-5xl 2xl:text-6xl">
             服务不是选项，
             <br />
             是一套协同系统

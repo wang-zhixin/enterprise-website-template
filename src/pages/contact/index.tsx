@@ -25,17 +25,17 @@ const ContactPage: NextPage = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-[#031b2d]/92 via-[#031b2d]/48 to-[#031b2d]/15" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#061f34] via-transparent to-transparent" />
           <div
-            className="pointer-events-none absolute -right-8 bottom-[-0.18em] text-[10rem] font-semibold leading-none tracking-[-0.1em] text-white/[0.08] sm:text-[18rem] lg:text-[26rem]"
+            className="pointer-events-none absolute -right-8 bottom-[-0.18em] text-[10rem] font-semibold leading-none tracking-[-0.1em] text-white/[0.08] sm:text-[18rem] 2xl:text-[26rem]"
             aria-hidden="true"
           >
             HELLO
           </div>
-          <div className="relative mx-auto flex min-h-[76vh] w-full max-w-[1800px] items-end px-6 pb-20 pt-32 sm:px-10 sm:pb-24 lg:px-16 lg:pb-32 xl:px-24">
+          <div className="relative mx-auto flex min-h-[76vh] w-full max-w-[1800px] items-end px-6 pb-20 pt-32 sm:px-10 sm:pb-24 lg:px-16 2xl:px-24 2xl:pb-32">
             <div className="max-w-5xl text-white">
               <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary">
                 Contact Us
               </p>
-              <h1 className="mt-7 text-5xl font-semibold leading-[1.08] tracking-[-0.05em] text-white sm:text-6xl lg:text-7xl">
+              <h1 className="mt-7 text-5xl font-semibold leading-[1.08] tracking-[-0.05em] text-white sm:text-6xl 2xl:text-7xl">
                 开始一次
                 <br />
                 有效沟通
@@ -44,7 +44,7 @@ const ContactPage: NextPage = () => {
           </div>
         </header>
 
-        <div className="relative isolate overflow-hidden px-6 pb-28 sm:px-10 sm:pb-36 lg:px-16 lg:pb-44 xl:px-24">
+        <div className="relative isolate overflow-hidden px-6 pb-28 sm:px-10 sm:pb-36 lg:px-16 2xl:px-24 2xl:pb-44">
           <svg
             className="pointer-events-none absolute left-0 top-0 -z-10 h-full w-full text-white/[0.06]"
             viewBox="0 0 1600 900"
@@ -58,12 +58,12 @@ const ContactPage: NextPage = () => {
             <circle cx="1150" cy="175" r="5" fill="#CC4A40" />
           </svg>
 
-          <div className="mx-auto grid w-full max-w-[1600px] gap-16 lg:grid-cols-[0.82fr_1.18fr] lg:items-start lg:gap-24">
+          <div className="mx-auto grid w-full max-w-[1600px] gap-16 lg:grid-cols-[0.82fr_1.18fr] lg:items-start 2xl:gap-24">
             <section className="pt-12 text-white sm:pt-16 lg:sticky lg:top-28 lg:pt-24" aria-labelledby="service-network-title">
               <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary">Service Network</p>
               <h2
                 id="service-network-title"
-                className="mt-7 text-4xl font-semibold leading-[1.12] tracking-[-0.05em] text-white sm:text-5xl lg:text-6xl"
+                className="mt-7 text-4xl font-semibold leading-[1.12] tracking-[-0.05em] text-white sm:text-5xl 2xl:text-6xl"
               >
                 从上海出发，
                 <br />
@@ -80,7 +80,7 @@ const ContactPage: NextPage = () => {
               </p>
               <ul
                 role="list"
-                className="mt-10 grid !ml-0 list-none grid-cols-2 gap-x-6 sm:grid-cols-3 sm:gap-x-8 lg:grid-cols-5"
+                className="mt-10 grid !ml-0 list-none grid-cols-2 gap-x-6 sm:grid-cols-3 sm:gap-x-8 2xl:grid-cols-5"
               >
                 {branches.map((branch, index) => (
                   <li

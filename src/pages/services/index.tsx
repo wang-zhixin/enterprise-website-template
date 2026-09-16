@@ -71,17 +71,17 @@ const ServicesPage: NextPage = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#031b2d]/95 via-[#031b2d]/66 to-[#031b2d]/25" />
           <div
-            className="pointer-events-none absolute -right-10 bottom-[-0.16em] text-[9rem] font-semibold leading-none tracking-[-0.1em] text-white/[0.08] sm:text-[16rem] lg:text-[24rem]"
+            className="pointer-events-none absolute -right-10 bottom-[-0.16em] text-[9rem] font-semibold leading-none tracking-[-0.1em] text-white/[0.08] sm:text-[16rem] 2xl:text-[24rem]"
             aria-hidden="true"
           >
             HRO
           </div>
-          <div className="relative mx-auto flex min-h-[82vh] w-full max-w-[1800px] items-end px-6 pb-16 pt-32 sm:px-10 sm:pb-20 lg:px-16 lg:pb-24 xl:px-24">
+          <div className="relative mx-auto flex min-h-[82vh] w-full max-w-[1800px] items-end px-6 pb-16 pt-32 sm:px-10 sm:pb-20 lg:px-16 lg:pb-20 2xl:px-24 2xl:pb-24">
             <div className="max-w-5xl text-white">
               <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary">
                 Products &amp; Services
               </p>
-              <h1 className="mt-7 max-w-5xl text-5xl font-semibold leading-[1.08] tracking-[-0.05em] text-white sm:text-6xl lg:text-7xl">
+              <h1 className="mt-7 max-w-5xl text-5xl font-semibold leading-[1.08] tracking-[-0.05em] text-white sm:text-6xl 2xl:text-7xl">
                 把复杂用工，
                 <br />
                 变成稳定交付
@@ -93,11 +93,11 @@ const ServicesPage: NextPage = () => {
           </div>
         </header>
 
-        <section className="relative overflow-hidden bg-[#f1f4f3] px-6 py-24 sm:px-10 sm:py-32 lg:px-16 lg:py-40 xl:px-24">
-          <div className="mx-auto grid w-full max-w-[1600px] gap-16 lg:grid-cols-[0.64fr_1.36fr] lg:gap-24">
+        <section className="relative overflow-hidden bg-[#f1f4f3] px-6 py-24 sm:px-10 sm:py-32 lg:px-16 2xl:px-24 2xl:py-40">
+          <div className="mx-auto grid w-full max-w-[1600px] gap-16 lg:grid-cols-[0.64fr_1.36fr] 2xl:gap-24">
             <div className="lg:sticky lg:top-32 lg:h-fit">
               <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary">Service Index</p>
-              <h2 className="mt-7 text-4xl font-semibold leading-[1.12] tracking-[-0.05em] text-[#082f4f] sm:text-5xl lg:text-6xl">
+              <h2 className="mt-7 text-4xl font-semibold leading-[1.12] tracking-[-0.05em] text-[#082f4f] sm:text-5xl 2xl:text-6xl">
                 七项能力，
                 <br />
                 一套方案
@@ -131,18 +131,18 @@ const ServicesPage: NextPage = () => {
           </div>
         </section>
 
-        <section className="relative isolate overflow-hidden bg-[#f1f4f3] px-6 py-24 sm:px-10 sm:py-32 lg:px-16 lg:py-40 xl:px-24">
+        <section className="relative isolate overflow-hidden bg-[#f1f4f3] px-6 py-24 sm:px-10 sm:py-32 lg:px-16 2xl:px-24 2xl:py-40">
           <div
-            className="pointer-events-none absolute -bottom-10 -left-8 -z-10 text-[10rem] font-semibold leading-none tracking-[-0.08em] text-white sm:text-[18rem] lg:text-[24rem]"
+            className="pointer-events-none absolute -bottom-10 -left-8 -z-10 text-[10rem] font-semibold leading-none tracking-[-0.08em] text-white sm:text-[18rem] 2xl:text-[24rem]"
             aria-hidden="true"
           >
             FLOW
           </div>
 
-          <div className="mx-auto grid w-full max-w-[1600px] gap-16 lg:grid-cols-[0.66fr_1.34fr] lg:gap-24 xl:gap-32">
+          <div className="mx-auto grid w-full max-w-[1600px] gap-16 lg:grid-cols-[0.66fr_1.34fr] 2xl:gap-24">
             <div className="lg:sticky lg:top-32 lg:h-fit">
               <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary">Recruitment Flow</p>
-              <h2 className="mt-7 max-w-xl text-4xl font-semibold leading-[1.12] tracking-[-0.05em] text-[#082f4f] sm:text-5xl lg:text-6xl">
+              <h2 className="mt-7 max-w-xl text-4xl font-semibold leading-[1.12] tracking-[-0.05em] text-[#082f4f] sm:text-5xl 2xl:text-6xl">
                 每一步，
                 <br />
                 都对应交付责任
@@ -175,17 +175,17 @@ const ServicesPage: NextPage = () => {
           </div>
         </section>
 
-        <section className="relative isolate overflow-hidden bg-[#061f34] px-6 py-24 text-white sm:px-10 sm:py-32 lg:px-16 lg:py-40 xl:px-24">
+        <section className="relative isolate overflow-hidden bg-[#061f34] px-6 py-24 text-white sm:px-10 sm:py-32 lg:px-16 2xl:px-24 2xl:py-40">
           <div
             className="pointer-events-none absolute -right-10 top-1/2 -z-10 -translate-y-1/2 text-[11rem] font-semibold leading-none tracking-[-0.1em] text-white/[0.025] sm:text-[20rem]"
             aria-hidden="true"
           >
             REACH
           </div>
-          <div className="mx-auto grid w-full max-w-[1600px] gap-16 lg:grid-cols-[0.72fr_1.28fr] lg:items-center lg:gap-24">
+          <div className="mx-auto grid w-full max-w-[1600px] gap-16 lg:grid-cols-[0.72fr_1.28fr] lg:items-center 2xl:gap-24">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary">Talent Channels</p>
-              <h2 className="mt-7 text-4xl font-semibold leading-[1.12] tracking-[-0.05em] text-white sm:text-5xl lg:text-6xl">
+              <h2 className="mt-7 text-4xl font-semibold leading-[1.12] tracking-[-0.05em] text-white sm:text-5xl 2xl:text-6xl">
                 让人才触达，
                 <br />
                 不止一条路径
@@ -215,11 +215,11 @@ const ServicesPage: NextPage = () => {
           </div>
         </section>
 
-        <section className="bg-[#edecea] px-6 py-24 sm:px-10 sm:py-32 lg:px-16 lg:py-40 xl:px-24">
+        <section className="bg-[#edecea] px-6 py-24 sm:px-10 sm:py-32 lg:px-16 2xl:px-24 2xl:py-40">
           <div className="mx-auto w-full max-w-[1600px]">
             <div className="max-w-4xl">
               <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary">Employee Lifecycle</p>
-              <h2 className="mt-7 text-4xl font-semibold leading-[1.12] tracking-[-0.05em] text-[#082f4f] sm:text-5xl lg:text-6xl">
+              <h2 className="mt-7 text-4xl font-semibold leading-[1.12] tracking-[-0.05em] text-[#082f4f] sm:text-5xl 2xl:text-6xl">
                 从入职到离职，
                 <br />
                 管理始终在线
@@ -240,8 +240,8 @@ const ServicesPage: NextPage = () => {
           </div>
         </section>
 
-        <section className="relative overflow-hidden bg-white px-6 py-24 sm:px-10 sm:py-32 lg:px-16 lg:py-40 xl:px-24">
-          <div className="mx-auto grid w-full max-w-[1600px] items-center gap-16 lg:grid-cols-[0.8fr_1.2fr] lg:gap-28">
+        <section className="relative overflow-hidden bg-white px-6 py-24 sm:px-10 sm:py-32 lg:px-16 2xl:px-24 2xl:py-40">
+          <div className="mx-auto grid w-full max-w-[1600px] items-center gap-16 lg:grid-cols-[0.8fr_1.2fr] 2xl:gap-28">
             <div className="brand-orbit relative mx-auto flex aspect-square w-full max-w-[520px] items-center justify-center rounded-full border border-slate-300">
               <div className="absolute inset-10 rounded-full border border-primary/30" aria-hidden="true" />
               <div className="text-center">
@@ -251,7 +251,7 @@ const ServicesPage: NextPage = () => {
             </div>
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary">Risk Control</p>
-              <h2 className="mt-7 text-4xl font-semibold leading-[1.12] tracking-[-0.05em] text-[#082f4f] sm:text-5xl lg:text-6xl">
+              <h2 className="mt-7 text-4xl font-semibold leading-[1.12] tracking-[-0.05em] text-[#082f4f] sm:text-5xl 2xl:text-6xl">
                 一套贯穿全周期的风险防线
               </h2>
               <ol className="mt-12 grid !ml-0 list-none gap-x-12 sm:grid-cols-2">
@@ -266,7 +266,7 @@ const ServicesPage: NextPage = () => {
           </div>
         </section>
 
-        <section className="relative isolate overflow-hidden bg-[#061f34] px-6 py-24 text-white sm:px-10 sm:py-32 lg:px-16 lg:py-36 xl:px-24">
+        <section className="relative isolate overflow-hidden bg-[#061f34] px-6 py-24 text-white sm:px-10 sm:py-32 lg:px-16 lg:py-32 2xl:px-24 2xl:py-36">
           <div
             className="pointer-events-none absolute -right-8 bottom-[-0.25em] -z-10 text-[10rem] font-semibold leading-none tracking-[-0.1em] text-white/[0.035] sm:text-[18rem]"
             aria-hidden="true"
@@ -276,7 +276,7 @@ const ServicesPage: NextPage = () => {
           <div className="mx-auto flex w-full max-w-[1600px] flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary">Start a Project</p>
-              <h2 className="mt-7 max-w-5xl text-4xl font-semibold leading-[1.12] tracking-[-0.05em] text-white sm:text-5xl lg:text-6xl">
+              <h2 className="mt-7 max-w-5xl text-4xl font-semibold leading-[1.12] tracking-[-0.05em] text-white sm:text-5xl 2xl:text-6xl">
                 从一个岗位需求，
                 <br />
                 开始设计整套方案

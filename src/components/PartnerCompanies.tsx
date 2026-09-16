@@ -17,11 +17,11 @@ const logoRows = [
 const PartnerCompanies = () => {
   return (
     <section
-      className="relative isolate overflow-hidden bg-[#061f34] px-6 py-24 text-white sm:px-10 sm:py-32 lg:px-16 lg:py-40 xl:px-24"
+      className="relative isolate overflow-hidden bg-[#061f34] px-6 py-24 text-white sm:px-10 sm:py-32 lg:px-16 2xl:px-24 2xl:py-40"
       aria-labelledby="partner-companies-title"
     >
       <div
-        className="pointer-events-none absolute -right-12 top-1/2 -z-10 -translate-y-1/2 text-[10rem] font-semibold leading-none tracking-[-0.1em] text-white/[0.025] sm:text-[18rem] lg:text-[25rem]"
+        className="pointer-events-none absolute -right-12 top-1/2 -z-10 -translate-y-1/2 text-[10rem] font-semibold leading-none tracking-[-0.1em] text-white/[0.025] sm:text-[18rem] 2xl:text-[25rem]"
         aria-hidden="true"
       >
         PARTNERS
@@ -32,7 +32,7 @@ const PartnerCompanies = () => {
       />
 
       <div className="mx-auto w-full max-w-[1600px]">
-        <div className="grid gap-14 lg:grid-cols-[0.82fr_1.18fr] lg:items-end lg:gap-24">
+        <div className="grid gap-14 lg:grid-cols-[0.82fr_1.18fr] lg:items-end lg:gap-16 2xl:gap-24">
           <div>
             <div className="flex items-center gap-4">
               <span className="h-px w-14 bg-primary" aria-hidden="true" />
@@ -42,7 +42,7 @@ const PartnerCompanies = () => {
             </div>
             <h2
               id="partner-companies-title"
-              className="mt-8 max-w-2xl text-4xl font-semibold leading-[1.12] tracking-[-0.05em] text-white sm:text-5xl lg:text-6xl"
+              className="mt-8 max-w-2xl text-4xl font-semibold leading-[1.12] tracking-[-0.05em] text-white sm:text-5xl 2xl:text-6xl"
             >
               与优秀企业
               <br />

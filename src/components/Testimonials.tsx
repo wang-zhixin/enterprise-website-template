@@ -18,7 +18,7 @@ const Testimonials = () => {
   const rightControls = controls.slice(6);
 
   return (
-    <section className="relative isolate overflow-hidden bg-[#061f34] px-6 py-24 text-white sm:px-10 sm:py-32 lg:px-16 lg:py-40 xl:px-24">
+    <section className="relative isolate overflow-hidden bg-[#061f34] px-6 py-24 text-white sm:px-10 sm:py-32 lg:px-16 2xl:px-24 2xl:py-40">
       <div
         className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[52rem] w-[52rem] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/[0.04]"
         aria-hidden="true"
@@ -33,7 +33,7 @@ const Testimonials = () => {
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary">
             Employment Risk Control
           </p>
-          <h2 className="mt-7 text-4xl font-semibold leading-[1.12] tracking-[-0.05em] text-white sm:text-5xl lg:text-6xl">
+          <h2 className="mt-7 text-4xl font-semibold leading-[1.12] tracking-[-0.05em] text-white sm:text-5xl 2xl:text-6xl">
             把风险拦在发生之前
           </h2>
           <p className="mx-auto mt-8 max-w-2xl text-base leading-8 text-white/60 sm:text-lg sm:leading-9">

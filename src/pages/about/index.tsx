@@ -21,31 +21,31 @@ const AboutPage: NextPage = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-[#031b2d]/80 via-[#031b2d]/20 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#031b2d]/75 via-transparent to-transparent" />
           <div
-            className="pointer-events-none absolute -right-8 bottom-[-0.15em] text-[9rem] font-semibold leading-none tracking-[-0.1em] text-white/[0.1] sm:text-[16rem] lg:text-[24rem]"
+            className="pointer-events-none absolute -right-8 bottom-[-0.15em] text-[9rem] font-semibold leading-none tracking-[-0.1em] text-white/[0.1] sm:text-[16rem] 2xl:text-[24rem]"
             aria-hidden="true"
           >
             RUISE
           </div>
-          <div className="relative mx-auto flex min-h-[88vh] w-full max-w-[1800px] items-end px-6 pb-16 pt-32 sm:px-10 sm:pb-20 lg:px-16 lg:pb-24 xl:px-24">
+          <div className="relative mx-auto flex min-h-[88vh] w-full max-w-[1800px] items-end px-6 pb-16 pt-32 sm:px-10 sm:pb-20 lg:px-16 2xl:px-24 2xl:pb-24">
             <div className="max-w-5xl text-white">
               <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary">
                 About Ruise
               </p>
-              <h1 className="mt-7 text-5xl font-semibold leading-[1.08] tracking-[-0.05em] text-white sm:text-6xl lg:text-7xl">
+              <h1 className="mt-7 text-5xl font-semibold leading-[1.08] tracking-[-0.05em] text-white sm:text-6xl 2xl:text-7xl">
                 关于我们
               </h1>
             </div>
           </div>
         </header>
 
-        <section className="relative overflow-hidden px-6 py-24 sm:px-10 sm:py-32 lg:px-16 lg:py-44 xl:px-24">
+        <section className="relative overflow-hidden px-6 py-24 sm:px-10 sm:py-32 lg:px-16 2xl:px-24 2xl:py-44">
           <div
-            className="pointer-events-none absolute left-0 top-12 text-[8rem] font-semibold leading-none tracking-[-0.08em] text-slate-50 sm:text-[14rem] lg:text-[20rem]"
+            className="pointer-events-none absolute left-0 top-12 text-[8rem] font-semibold leading-none tracking-[-0.08em] text-slate-50 sm:text-[14rem] 2xl:text-[20rem]"
             aria-hidden="true"
           >
             2017
           </div>
-          <div className="relative mx-auto grid w-full max-w-[1600px] gap-12 lg:grid-cols-[0.28fr_0.72fr] lg:gap-24">
+          <div className="relative mx-auto grid w-full max-w-[1600px] gap-12 lg:grid-cols-[0.28fr_0.72fr] lg:gap-16 2xl:gap-24">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.22em] text-primary">01 · Company Profile</p>
               <p className="mt-6 text-base leading-8 text-slate-500">专业人力资源服务机构</p>
@@ -58,7 +58,7 @@ const AboutPage: NextPage = () => {
           </div>
         </section>
 
-        <section className="relative min-h-[980px] overflow-hidden bg-[#061f34] lg:min-h-[1080px]">
+        <section className="relative min-h-[820px] overflow-hidden bg-[#061f34] sm:min-h-[900px] 2xl:min-h-[1080px]">
           <Image
             src="/1.jpg"
             alt="睐智人力上海总部办公空间"
@@ -67,11 +67,11 @@ const AboutPage: NextPage = () => {
             className="object-cover object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#031b2d] via-[#031b2d]/52 to-transparent" />
-          <div className="relative mx-auto flex min-h-[980px] w-full max-w-[1800px] items-end px-6 pb-16 pt-40 sm:px-10 sm:pb-20 lg:min-h-[1080px] lg:px-16 lg:pb-24 xl:px-24">
-            <div className="grid w-full gap-12 text-white lg:grid-cols-[0.42fr_0.58fr] lg:items-end lg:gap-24">
+          <div className="relative mx-auto flex min-h-[820px] w-full max-w-[1800px] items-end px-6 pb-16 pt-32 sm:min-h-[900px] sm:px-10 sm:pb-20 lg:px-16 2xl:min-h-[1080px] 2xl:px-24 2xl:pb-24 2xl:pt-40">
+            <div className="grid w-full gap-12 text-white lg:grid-cols-[0.42fr_0.58fr] lg:items-end lg:gap-16 2xl:gap-24">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.22em] text-primary">02 · National Network</p>
-                <h2 className="mt-7 text-4xl font-semibold leading-[1.12] tracking-[-0.05em] text-white sm:text-5xl lg:text-6xl">
+                <h2 className="mt-7 text-4xl font-semibold leading-[1.12] tracking-[-0.05em] text-white sm:text-5xl 2xl:text-6xl">
                   立足上海，
                   <br />
                   服务全国
@@ -96,9 +96,9 @@ const AboutPage: NextPage = () => {
           </div>
         </section>
 
-        <section className="relative overflow-hidden bg-[#edecea] px-6 py-24 sm:px-10 sm:py-32 lg:px-16 lg:py-40 xl:px-24">
-          <div className="mx-auto grid w-full max-w-[1600px] items-center gap-16 lg:grid-cols-[0.58fr_0.42fr] lg:gap-24">
-            <div className="relative min-h-[620px] overflow-hidden sm:min-h-[760px]">
+        <section className="relative overflow-hidden bg-[#edecea] px-6 py-24 sm:px-10 sm:py-32 lg:px-16 2xl:px-24 2xl:py-40">
+          <div className="mx-auto grid w-full max-w-[1600px] items-center gap-16 lg:grid-cols-[0.58fr_0.42fr] 2xl:gap-24">
+            <div className="relative min-h-[620px] overflow-hidden sm:min-h-[700px] lg:min-h-[620px] 2xl:min-h-[760px]">
               <Image
                 src="/3.jpg"
                 alt="睐智人力品牌墙"
@@ -112,7 +112,7 @@ const AboutPage: NextPage = () => {
             </div>
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.22em] text-primary">03 · Digital Delivery</p>
-              <h2 className="mt-7 text-4xl font-semibold leading-[1.12] tracking-[-0.05em] text-[#082f4f] sm:text-5xl lg:text-6xl">
+              <h2 className="mt-7 text-4xl font-semibold leading-[1.12] tracking-[-0.05em] text-[#082f4f] sm:text-5xl 2xl:text-6xl">
                 数字化，
                 <br />
                 不是口号
@@ -124,14 +124,14 @@ const AboutPage: NextPage = () => {
           </div>
         </section>
 
-        <section className="overflow-hidden bg-white px-6 py-24 sm:px-10 sm:py-32 lg:px-16 lg:py-40 xl:px-24">
+        <section className="overflow-hidden bg-white px-6 py-24 sm:px-10 sm:py-32 lg:px-16 2xl:px-24 2xl:py-40">
           <div className="mx-auto w-full max-w-[1600px]">
-            <div className="grid gap-12 lg:grid-cols-[0.4fr_0.6fr] lg:items-end lg:gap-24">
+            <div className="grid gap-12 lg:grid-cols-[0.4fr_0.6fr] lg:items-end lg:gap-16 2xl:gap-24">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.22em] text-primary">
                   04 · Qualification &amp; Honour
                 </p>
-                <h2 className="mt-7 text-4xl font-semibold leading-[1.12] tracking-[-0.05em] text-[#082f4f] sm:text-5xl lg:text-6xl">
+                <h2 className="mt-7 text-4xl font-semibold leading-[1.12] tracking-[-0.05em] text-[#082f4f] sm:text-5xl 2xl:text-6xl">
                   资质，是可以
                   <br />
                   被看见的底线
@@ -185,17 +185,17 @@ const AboutPage: NextPage = () => {
           </div>
         </section>
 
-        <section className="relative isolate overflow-hidden bg-primary px-6 py-24 text-white sm:px-10 sm:py-32 lg:px-16 lg:py-40 xl:px-24">
+        <section className="relative isolate overflow-hidden bg-primary px-6 py-24 text-white sm:px-10 sm:py-32 lg:px-16 2xl:px-24 2xl:py-40">
           <div
             className="pointer-events-none absolute -right-10 top-1/2 -z-10 -translate-y-1/2 text-[18rem] font-semibold leading-none tracking-[-0.1em] text-white/[0.09] sm:text-[30rem]"
             aria-hidden="true"
           >
             12
           </div>
-          <div className="mx-auto grid w-full max-w-[1600px] gap-12 lg:grid-cols-[0.38fr_0.62fr] lg:gap-24">
+          <div className="mx-auto grid w-full max-w-[1600px] gap-12 lg:grid-cols-[0.38fr_0.62fr] lg:gap-16 2xl:gap-24">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.22em] text-white/65">05 · Risk Control</p>
-              <h2 className="mt-7 text-4xl font-semibold leading-[1.12] tracking-[-0.05em] text-white sm:text-5xl lg:text-6xl">
+              <h2 className="mt-7 text-4xl font-semibold leading-[1.12] tracking-[-0.05em] text-white sm:text-5xl 2xl:text-6xl">
                 12道风险
                 <br />
                 防控体系
@@ -207,7 +207,7 @@ const AboutPage: NextPage = () => {
           </div>
         </section>
 
-        <section className="relative isolate overflow-hidden bg-[#061f34] px-6 py-28 text-white sm:px-10 sm:py-36 lg:px-16 lg:py-48 xl:px-24">
+        <section className="relative isolate overflow-hidden bg-[#061f34] px-6 py-28 text-white sm:px-10 sm:py-36 lg:px-16 2xl:px-24 2xl:py-48">
           <div
             className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[34rem] w-[34rem] -translate-x-1/2 -translate-y-1/2 rounded-full border border-primary/25 sm:h-[50rem] sm:w-[50rem]"
             aria-hidden="true"
@@ -217,7 +217,7 @@ const AboutPage: NextPage = () => {
               在企业的不同发展阶段提供持续的服务，帮助客户持续地降本增效,卓越运营，提升企业的核心竞争力。我们的使命是通过睐智人力的外包等服务让您的企业发展的更好，更快
             </p>
             <div className="mx-auto mt-12 h-1 w-16 bg-primary" aria-hidden="true" />
-            <p className="mt-12 text-3xl font-semibold leading-[1.18] tracking-[-0.04em] text-white sm:text-4xl lg:text-5xl">
+            <p className="mt-12 text-3xl font-semibold leading-[1.18] tracking-[-0.04em] text-white sm:text-4xl 2xl:text-5xl">
               Rise your business
               <br />
               through HRO

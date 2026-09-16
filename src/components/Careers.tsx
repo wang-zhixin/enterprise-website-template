@@ -11,7 +11,7 @@ const qualifications = [
 const Careers = () => {
   return (
     <section className="relative isolate overflow-hidden bg-[#edecea]">
-      <div className="grid min-h-[820px] lg:grid-cols-[1.08fr_0.92fr]">
+      <div className="grid min-h-[720px] lg:grid-cols-[1.08fr_0.92fr] 2xl:min-h-[820px]">
         <div className="relative min-h-[520px] overflow-hidden lg:min-h-full">
           <Image
             src="/3.jpg"
@@ -37,7 +37,7 @@ const Careers = () => {
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary">
               Professional Qualification
             </p>
-            <h2 className="mt-7 text-4xl font-semibold leading-[1.12] tracking-[-0.05em] text-[#082f4f] sm:text-5xl lg:text-6xl">
+            <h2 className="mt-7 text-4xl font-semibold leading-[1.12] tracking-[-0.05em] text-[#082f4f] sm:text-5xl 2xl:text-6xl">
               专业合规，
               <br />
               才能长期托付

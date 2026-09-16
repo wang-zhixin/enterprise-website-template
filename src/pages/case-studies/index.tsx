@@ -52,17 +52,17 @@ const CaseStudiesPage: NextPage = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#031b2d]/95 via-[#031b2d]/62 to-[#031b2d]/15" />
           <div
-            className="pointer-events-none absolute -right-10 bottom-[-0.18em] text-[10rem] font-semibold leading-none tracking-[-0.1em] text-white/[0.08] sm:text-[18rem] lg:text-[26rem]"
+            className="pointer-events-none absolute -right-10 bottom-[-0.18em] text-[10rem] font-semibold leading-none tracking-[-0.1em] text-white/[0.08] sm:text-[18rem] 2xl:text-[26rem]"
             aria-hidden="true"
           >
             CASE
           </div>
-          <div className="relative mx-auto flex min-h-[82vh] w-full max-w-[1800px] items-end px-6 pb-16 pt-32 sm:px-10 sm:pb-20 lg:px-16 lg:pb-24 xl:px-24">
+          <div className="relative mx-auto flex min-h-[82vh] w-full max-w-[1800px] items-end px-6 pb-16 pt-32 sm:px-10 sm:pb-20 lg:px-16 2xl:px-24 2xl:pb-24">
             <div className="max-w-5xl text-white">
               <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary">
                 Customer Stories
               </p>
-              <h1 className="mt-7 text-5xl font-semibold leading-[1.08] tracking-[-0.05em] text-white sm:text-6xl lg:text-7xl">
+              <h1 className="mt-7 text-5xl font-semibold leading-[1.08] tracking-[-0.05em] text-white sm:text-6xl 2xl:text-7xl">
                 企业案例
               </h1>
               <p className="mt-9 max-w-3xl text-base leading-8 text-white/70 sm:text-lg sm:leading-9">
@@ -72,8 +72,8 @@ const CaseStudiesPage: NextPage = () => {
           </div>
         </header>
 
-        <section className="px-6 py-24 sm:px-10 sm:py-32 lg:px-16 lg:py-40 xl:px-24">
-          <div className="mx-auto grid w-full max-w-[1600px] gap-12 lg:grid-cols-[0.38fr_0.62fr] lg:gap-24">
+        <section className="px-6 py-24 sm:px-10 sm:py-32 lg:px-16 2xl:px-24 2xl:py-40">
+          <div className="mx-auto grid w-full max-w-[1600px] gap-12 lg:grid-cols-[0.38fr_0.62fr] lg:gap-16 2xl:gap-24">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary">Selected Cases</p>
               <p className="mt-6 text-base leading-8 text-slate-500">从现场问题出发，而不是从标准答案出发。</p>
@@ -91,8 +91,8 @@ const CaseStudiesPage: NextPage = () => {
             key={item.title}
             className={
               index === 0
-                ? 'relative overflow-hidden bg-[#eef1f0] px-6 py-24 sm:px-10 sm:py-32 lg:px-16 lg:py-40 xl:px-24'
-                : 'relative overflow-hidden bg-[#061f34] px-6 py-24 text-white sm:px-10 sm:py-32 lg:px-16 lg:py-40 xl:px-24'
+                ? 'relative overflow-hidden bg-[#eef1f0] px-6 py-24 sm:px-10 sm:py-32 lg:px-16 2xl:px-24 2xl:py-40'
+                : 'relative overflow-hidden bg-[#061f34] px-6 py-24 text-white sm:px-10 sm:py-32 lg:px-16 2xl:px-24 2xl:py-40'
             }
           >
             <span
@@ -136,8 +136,8 @@ const CaseStudiesPage: NextPage = () => {
                 <h2
                   className={
                     index === 0
-                      ? 'mt-7 text-3xl font-semibold leading-[1.2] tracking-[-0.04em] text-[#082f4f] sm:text-4xl lg:text-5xl'
-                      : 'mt-7 text-3xl font-semibold leading-[1.2] tracking-[-0.04em] text-white sm:text-4xl lg:text-5xl'
+                      ? 'mt-7 text-3xl font-semibold leading-[1.2] tracking-[-0.04em] text-[#082f4f] sm:text-4xl 2xl:text-5xl'
+                      : 'mt-7 text-3xl font-semibold leading-[1.2] tracking-[-0.04em] text-white sm:text-4xl 2xl:text-5xl'
                   }
                 >
                   {item.title}
@@ -180,7 +180,7 @@ const CaseStudiesPage: NextPage = () => {
           </article>
         ))}
 
-        <section className="relative isolate overflow-hidden bg-primary px-6 py-24 text-white sm:px-10 sm:py-32 lg:px-16 xl:px-24">
+        <section className="relative isolate overflow-hidden bg-primary px-6 py-24 text-white sm:px-10 sm:py-32 lg:px-16 2xl:px-24">
           <div
             className="pointer-events-none absolute -right-6 bottom-[-0.18em] -z-10 text-[10rem] font-semibold leading-none tracking-[-0.1em] text-white/[0.08] sm:text-[18rem]"
             aria-hidden="true"
@@ -190,7 +190,7 @@ const CaseStudiesPage: NextPage = () => {
           <div className="mx-auto flex w-full max-w-[1600px] flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.22em] text-white/70">Your Project</p>
-              <h2 className="mt-7 max-w-5xl text-4xl font-semibold leading-[1.12] tracking-[-0.05em] text-white sm:text-5xl lg:text-6xl">
+              <h2 className="mt-7 max-w-5xl text-4xl font-semibold leading-[1.12] tracking-[-0.05em] text-white sm:text-5xl 2xl:text-6xl">
                 下一个被解决的现场，
                 <br />
                 可以从这里开始

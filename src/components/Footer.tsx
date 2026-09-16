@@ -24,7 +24,7 @@ const Footer = () => {
         RUISE
       </div>
 
-      <div className="mx-auto w-full max-w-[1600px] px-6 sm:px-10 lg:px-16 xl:px-24">
+      <div className="mx-auto w-full max-w-[1600px] px-6 sm:px-10 lg:px-16 2xl:px-24">
         {/* <div className="grid gap-12 border-b border-white/15 py-20 sm:py-24 lg:grid-cols-[1fr_auto] lg:items-end lg:gap-20">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary">
@@ -32,7 +32,7 @@ const Footer = () => {
             </p>
             <h2
               id="footer-heading"
-              className="mt-7 max-w-5xl text-4xl font-semibold leading-[1.12] tracking-[-0.05em] text-white sm:text-5xl lg:text-6xl"
+              className="mt-7 max-w-5xl text-4xl font-semibold leading-[1.12] tracking-[-0.05em] text-white sm:text-5xl 2xl:text-6xl"
             >
               让用工更稳，
               <br />
@@ -48,7 +48,7 @@ const Footer = () => {
           </Link>
         </div> */}
 
-        <div className="grid gap-12 py-14 lg:grid-cols-[0.8fr_1.2fr] lg:items-start lg:gap-24">
+        <div className="grid gap-12 py-14 lg:grid-cols-[0.8fr_1.2fr] lg:items-start lg:gap-16 2xl:gap-24">
           <div>
             <Logo text={siteConfig.name} variant="white" />
             <p className="mt-7 max-w-md text-base leading-8 text-white/55">

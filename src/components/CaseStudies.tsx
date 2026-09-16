@@ -26,14 +26,14 @@ const cases = [
 
 const CaseStudies = () => {
   return (
-    <section className="overflow-hidden bg-white py-24 sm:py-32 lg:py-40">
-      <div className="px-6 sm:px-10 lg:px-16 xl:px-24">
+    <section className="overflow-hidden bg-white py-24 sm:py-32 2xl:py-40">
+      <div className="px-6 sm:px-10 lg:px-16 2xl:px-24">
         <div className="mx-auto flex w-full max-w-[1600px] flex-col gap-10 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary">
               Customer Stories
             </p>
-            <h2 className="mt-7 max-w-4xl text-4xl font-semibold leading-[1.12] tracking-[-0.05em] text-[#082f4f] sm:text-5xl lg:text-6xl">
+            <h2 className="mt-7 max-w-4xl text-4xl font-semibold leading-[1.12] tracking-[-0.05em] text-[#082f4f] sm:text-5xl 2xl:text-6xl">
               真实现场，
               <br />
               真实交付
@@ -55,8 +55,8 @@ const CaseStudies = () => {
             key={item.industry}
             className={
               index === 0
-                ? 'relative min-h-[620px] overflow-hidden bg-[#061f34] sm:min-h-[700px] lg:mr-[10vw] lg:min-h-[760px]'
-                : 'relative min-h-[620px] overflow-hidden bg-[#061f34] sm:min-h-[700px] lg:ml-[10vw] lg:min-h-[760px]'
+                ? 'relative min-h-[620px] overflow-hidden bg-[#061f34] sm:min-h-[700px] lg:mr-[10vw] 2xl:min-h-[760px]'
+                : 'relative min-h-[620px] overflow-hidden bg-[#061f34] sm:min-h-[700px] lg:ml-[10vw] 2xl:min-h-[760px]'
             }
           >
             <Image
@@ -76,8 +76,8 @@ const CaseStudies = () => {
             <div
               className={
                 index === 0
-                  ? 'relative flex min-h-[620px] items-end px-6 py-12 text-white sm:min-h-[700px] sm:px-10 sm:py-16 lg:min-h-[760px] lg:px-20 lg:py-20 xl:px-28'
-                  : 'relative flex min-h-[620px] items-end px-6 py-12 text-white sm:min-h-[700px] sm:px-10 sm:py-16 lg:min-h-[760px] lg:justify-end lg:px-20 lg:py-20 xl:px-28'
+                  ? 'relative flex min-h-[620px] items-end px-6 py-12 text-white sm:min-h-[700px] sm:px-10 sm:py-16 lg:px-16 lg:py-16 2xl:min-h-[760px] 2xl:px-28 2xl:py-20'
+                  : 'relative flex min-h-[620px] items-end px-6 py-12 text-white sm:min-h-[700px] sm:px-10 sm:py-16 lg:justify-end lg:px-16 lg:py-16 2xl:min-h-[760px] 2xl:px-28 2xl:py-20'
               }
             >
               <div className="max-w-2xl">
