@@ -153,11 +153,11 @@ const CaseStudiesPage: NextPage = () => {
                       key={label}
                       className={
                         index === 0
-                          ? 'grid gap-4 border-t border-slate-400/60 py-7 sm:grid-cols-[6rem_1fr]'
-                          : 'grid gap-4 border-t border-white/20 py-7 sm:grid-cols-[6rem_1fr]'
+                          ? 'grid gap-3 border-t border-slate-400/60 py-7 sm:grid-cols-[7rem_minmax(0,1fr)] sm:gap-x-6'
+                          : 'grid gap-3 border-t border-white/20 py-7 sm:grid-cols-[7rem_minmax(0,1fr)] sm:gap-x-6'
                       }
                     >
-                      <dt className="text-sm font-semibold tracking-[0.08em] text-primary">
+                      <dt className="whitespace-nowrap text-sm font-semibold leading-8 tracking-[0.08em] text-primary">
                         0{detailIndex + 1} · {label}
                       </dt>
                       <dd className={index === 0 ? 'text-base leading-8 text-slate-600' : 'text-base leading-8 text-white/65'}>

@@ -9,51 +9,121 @@ const AboutPage: NextPage = () => {
       description="了解睐智人力的服务资质、全国服务网络、数字化招聘交付能力与风险防控体系"
     >
       <div className="bg-white">
-        <header className="relative min-h-[88vh] overflow-hidden bg-[#061f34]">
+        <header className="relative isolate overflow-hidden bg-[#061f34] text-white">
           <Image
             src="/2.jpg"
             alt="印有睐智人力品牌标识的旗帜"
             fill
             priority
             sizes="100vw"
-            className="object-cover object-center"
+            className="-z-20 object-cover object-[52%_42%] opacity-60"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#031b2d]/80 via-[#031b2d]/20 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#031b2d]/75 via-transparent to-transparent" />
+          <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#031b2d] via-[#031b2d]/90 to-[#031b2d]/35" />
+          <div className="absolute inset-0 -z-10 bg-gradient-to-t from-[#031b2d] via-transparent to-[#031b2d]/35" />
           <div
-            className="pointer-events-none absolute -right-8 bottom-[-0.15em] text-[9rem] font-semibold leading-none tracking-[-0.1em] text-white/[0.1] sm:text-[16rem] 2xl:text-[24rem]"
+            className="pointer-events-none absolute -right-8 top-24 -z-10 text-[8rem] font-semibold leading-none tracking-[-0.1em] text-white/[0.07] sm:text-[14rem] 2xl:text-[20rem]"
             aria-hidden="true"
           >
             RUISE
           </div>
-          <div className="relative mx-auto flex min-h-[88vh] w-full max-w-[1800px] items-end px-6 pb-16 pt-32 sm:px-10 sm:pb-20 lg:px-16 2xl:px-24 2xl:pb-24">
-            <div className="max-w-5xl text-white">
-              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary">
-                About Ruise
-              </p>
-              <h1 className="mt-7 text-5xl font-semibold leading-[1.08] tracking-[-0.05em] text-white sm:text-6xl 2xl:text-7xl">
-                关于我们
-              </h1>
+          <div className="relative mx-auto flex min-h-[100svh] w-full max-w-[1800px] flex-col justify-center px-6 pb-10 pt-32 sm:px-10 sm:pb-12 lg:px-16 lg:pb-14 lg:pt-36 2xl:px-24 2xl:pt-40">
+            <div className="grid w-full items-end gap-12 lg:grid-cols-[minmax(0,0.54fr)_minmax(360px,0.46fr)] lg:gap-16 2xl:gap-24">
+              <div className="max-w-4xl lg:pb-8">
+                <p className="flex items-center gap-4 text-sm font-semibold uppercase tracking-[0.24em] text-primary">
+                  <span className="h-px w-10 bg-primary" aria-hidden="true" />
+                  About Ruise
+                </p>
+                <h1 className="mt-7 text-5xl font-semibold leading-[1.08] tracking-[-0.05em] text-white sm:text-6xl 2xl:text-7xl">
+                  关于我们
+                </h1>
+                <p className="mt-8 max-w-3xl text-3xl font-semibold leading-[1.3] tracking-[-0.04em] text-white sm:text-4xl 2xl:text-5xl">
+                  让您的企业发展得更好，更快
+                </p>
+                <p className="mt-8 max-w-3xl text-base leading-8 text-white/70 sm:text-lg sm:leading-9">
+                  睐智人力资源(上海)有限公司是一家具备人力资源服务许可资质及劳务派遣业务经营许可的专业人力资源服务机构，主营业务包括人力资源HRO岗位外包、RPO批量招聘流程外包、中高端猎头、人事代理、劳务派遣、灵活用工和员工福利。
+                </p>
+              </div>
+
+              <figure className="relative mx-auto w-full max-w-[680px] lg:mx-0 lg:ml-auto">
+                <div className="absolute -left-5 -top-5 h-full w-full border border-primary/50 sm:-left-7 sm:-top-7" aria-hidden="true" />
+                <div className="relative aspect-[16/11] overflow-hidden bg-white/10 shadow-[0_28px_80px_rgba(0,0,0,0.28)]">
+                  <Image
+                    src="/1.jpg"
+                    alt="睐智人力上海总部办公空间"
+                    fill
+                    priority
+                    sizes="(min-width: 1024px) 44vw, 100vw"
+                    className="object-cover object-center transition-transform duration-[1400ms] hover:scale-[1.025]"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 flex items-end justify-between bg-gradient-to-t from-[#031b2d]/95 via-[#031b2d]/45 to-transparent px-5 pb-5 pt-16 sm:px-7 sm:pb-7">
+                    <figcaption>
+                      <span className="block text-xs font-semibold uppercase tracking-[0.2em] text-primary">Headquarters</span>
+                      <span className="mt-2 block text-lg font-semibold text-white">上海总部</span>
+                    </figcaption>
+                    <span className="text-sm tracking-[0.14em] text-white/55">2017 — SHANGHAI</span>
+                  </div>
+                </div>
+              </figure>
             </div>
+
+            <dl className="mt-10 grid grid-cols-2 border-y border-white/20 sm:mt-12 lg:grid-cols-4">
+              {[
+                ['300+', '服务城市'],
+                ['近千家', '服务客户'],
+                ['4W+', '外包员工'],
+                ['200+', '招聘交付团队'],
+              ].map(([value, label], index) => (
+                <div
+                  key={label}
+                  className={`py-5 sm:py-6 lg:px-7 lg:py-7 ${index % 2 === 1 ? 'border-l border-white/20' : ''} ${index > 1 ? 'border-t border-white/20 lg:border-t-0' : ''} ${index > 0 ? 'lg:border-l lg:border-white/20' : ''}`}
+                >
+                  <dd className="text-3xl font-semibold tracking-[-0.05em] text-primary sm:text-4xl">{value}</dd>
+                  <dt className="mt-2 text-sm tracking-[0.06em] text-white/55">{label}</dt>
+                </div>
+              ))}
+            </dl>
           </div>
         </header>
 
-        <section className="relative overflow-hidden px-6 py-24 sm:px-10 sm:py-32 lg:px-16 2xl:px-24 2xl:py-44">
+        <section className="relative overflow-hidden px-6 py-24 sm:px-10 sm:py-32 lg:px-16 2xl:px-24 2xl:py-40">
           <div
-            className="pointer-events-none absolute left-0 top-12 text-[8rem] font-semibold leading-none tracking-[-0.08em] text-slate-50 sm:text-[14rem] 2xl:text-[20rem]"
+            className="pointer-events-none absolute -right-8 top-8 text-[9rem] font-semibold leading-none tracking-[-0.08em] text-slate-50 sm:text-[15rem] 2xl:text-[20rem]"
             aria-hidden="true"
           >
-            2017
+            DNA
           </div>
-          <div className="relative mx-auto grid w-full max-w-[1600px] gap-12 lg:grid-cols-[0.28fr_0.72fr] lg:gap-16 2xl:gap-24">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-primary">01 · Company Profile</p>
-              <p className="mt-6 text-base leading-8 text-slate-500">专业人力资源服务机构</p>
+          <div className="relative mx-auto w-full max-w-[1600px]">
+            <div className="grid gap-10 lg:grid-cols-[0.38fr_0.62fr] lg:items-end lg:gap-16 2xl:gap-24">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.22em] text-primary">01 · Company Profile</p>
+                <h2 className="mt-7 text-4xl font-semibold leading-[1.14] tracking-[-0.05em] text-[#082f4f] sm:text-5xl 2xl:text-6xl">
+                  服务企业的
+                  <br />
+                  每一个发展阶段
+                </h2>
+              </div>
+              <p className="max-w-3xl text-base leading-8 text-slate-600 sm:text-lg sm:leading-9">
+                从招聘交付到岗位外包，从员工管理到用工风险防控，睐智人力以持续服务帮助客户降本增效、卓越运营，提升企业的核心竞争力。
+              </p>
             </div>
-            <div>
-              <h2 className="max-w-5xl text-2xl font-semibold leading-[1.65] tracking-[-0.03em] text-[#082f4f] sm:text-3xl sm:leading-[1.6]">
-                睐智人力资源(上海)有限公司是一家具备人力资源服务许可资质及劳务派遣业务经营许可的专业人力资源服务机构，主营业务包括人力资源HRO岗位外包、RPO批量招聘流程外包、中高端猎头、人事代理、劳务派遣、灵活用工和员工福利。
-              </h2>
+
+            <div className="mt-16 grid border-y border-slate-300 lg:mt-20 lg:grid-cols-3">
+              {[
+                ['01', '企业定位', '具备人力资源服务许可资质及劳务派遣业务经营许可的专业人力资源服务机构。'],
+                ['02', '企业发展', '在企业的不同发展阶段提供持续的服务，帮助客户持续地降本增效、卓越运营，提升企业的核心竞争力。'],
+                ['03', '企业使命', '通过睐智人力的外包等服务让您的企业发展得更好，更快。'],
+              ].map(([number, title, description], index) => (
+                <article
+                  key={title}
+                  className={`grid grid-cols-[3.5rem_1fr] gap-5 py-8 sm:grid-cols-[4.5rem_1fr] sm:py-10 lg:block lg:px-8 lg:py-12 2xl:px-12 ${index > 0 ? 'border-t border-slate-300 lg:border-l lg:border-t-0' : ''}`}
+                >
+                  <p className="text-sm font-semibold tracking-[0.16em] text-primary">{number}</p>
+                  <div>
+                    <h3 className="text-2xl font-semibold tracking-[-0.03em] text-[#082f4f] lg:mt-10">{title}</h3>
+                    <p className="mt-5 text-base leading-8 text-slate-600">{description}</p>
+                  </div>
+                </article>
+              ))}
             </div>
           </div>
         </section>

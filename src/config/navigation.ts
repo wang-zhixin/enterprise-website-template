@@ -5,9 +5,10 @@ export interface NavigationItem {
 
 export const navigation: NavigationItem[] = [
   { name: '首页', href: '/' },
+  { name: '关于我们', href: '/about' },
   { name: '产品服务', href: '/services' },
   { name: '企业案例', href: '/case-studies' },
-  { name: '关于我们', href: '/about' },
+  { name: '合作伙伴', href: '/partners' },
   { name: '联系我们', href: '/contact' },
 ];
 
