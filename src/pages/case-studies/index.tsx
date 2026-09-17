@@ -197,7 +197,7 @@ const CaseStudiesPage: NextPage = () => {
               </h2>
             </div>
             <Link
-              href="/contact"
+              href="/contact#business-inquiry"
               className="inline-flex min-h-14 w-fit items-center gap-6 bg-white px-8 text-base font-semibold tracking-[0.04em] text-[#082f4f] transition-colors hover:bg-[#061f34] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
             >
               咨询合作方案

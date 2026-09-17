@@ -283,7 +283,7 @@ const ServicesPage: NextPage = () => {
               </h2>
             </div>
             <Link
-              href="/contact"
+              href="/contact#business-inquiry"
               className="inline-flex min-h-14 w-fit items-center gap-6 bg-primary px-8 text-base font-semibold tracking-[0.04em] text-white transition-colors hover:bg-white hover:text-[#082f4f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
             >
               联系专业顾问

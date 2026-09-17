@@ -1,5 +1,4 @@
 import { NextPage } from 'next';
-import Image from 'next/image';
 import MainLayout from '../../components/layouts/MainLayout';
 import { ContactForm } from '../../components/forms/ContactForm';
 import { FORMSPREE_ID } from '../../config/formspree';
@@ -13,38 +12,7 @@ const ContactPage: NextPage = () => {
       description="联系睐智人力，咨询岗位外包、批量招聘、劳务派遣与灵活用工服务"
     >
       <div className="bg-[#061f34]">
-        <header className="relative min-h-[76vh] overflow-hidden bg-[#061f34]">
-          <Image
-            src="/2.jpg"
-            alt="睐智人力品牌旗帜"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-center"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#031b2d]/92 via-[#031b2d]/48 to-[#031b2d]/15" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#061f34] via-transparent to-transparent" />
-          <div
-            className="pointer-events-none absolute -right-8 bottom-[-0.18em] text-[10rem] font-semibold leading-none tracking-[-0.1em] text-white/[0.08] sm:text-[18rem] 2xl:text-[26rem]"
-            aria-hidden="true"
-          >
-            HELLO
-          </div>
-          <div className="relative mx-auto flex min-h-[76vh] w-full max-w-[1800px] items-end px-6 pb-20 pt-32 sm:px-10 sm:pb-24 lg:px-16 2xl:px-24 2xl:pb-32">
-            <div className="max-w-5xl text-white">
-              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary">
-                Contact Us
-              </p>
-              <h1 className="mt-7 text-5xl font-semibold leading-[1.08] tracking-[-0.05em] text-white sm:text-6xl 2xl:text-7xl">
-                开始一次
-                <br />
-                有效沟通
-              </h1>
-            </div>
-          </div>
-        </header>
-
-        <div className="relative isolate overflow-hidden px-6 pb-28 sm:px-10 sm:pb-36 lg:px-16 2xl:px-24 2xl:pb-44">
+        <div className="relative isolate overflow-hidden px-6 pb-28 pt-28 sm:px-10 sm:pb-36 lg:px-16 2xl:px-24 2xl:pb-44">
           <svg
             className="pointer-events-none absolute left-0 top-0 -z-10 h-full w-full text-white/[0.06]"
             viewBox="0 0 1600 900"
@@ -58,8 +26,8 @@ const ContactPage: NextPage = () => {
             <circle cx="1150" cy="175" r="5" fill="#CC4A40" />
           </svg>
 
-          <div className="mx-auto grid w-full max-w-[1600px] gap-16 lg:grid-cols-[0.82fr_1.18fr] lg:items-start 2xl:gap-24">
-            <section className="pt-12 text-white sm:pt-16 lg:sticky lg:top-28 lg:pt-24" aria-labelledby="service-network-title">
+          <div className="mx-auto grid w-full max-w-[1600px] gap-16 xl:grid-cols-[1.24fr_0.76fr] xl:items-start xl:gap-12 2xl:gap-20">
+            <section className="text-white xl:self-center" aria-labelledby="service-network-title">
               <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary">Service Network</p>
               <h2
                 id="service-network-title"
@@ -80,7 +48,7 @@ const ContactPage: NextPage = () => {
               </p>
               <ul
                 role="list"
-                className="mt-10 grid !ml-0 list-none grid-cols-2 gap-x-6 sm:grid-cols-3 sm:gap-x-8 2xl:grid-cols-5"
+                className="mt-10 grid !ml-0 list-none grid-cols-2 gap-x-6 sm:grid-cols-3 sm:gap-x-8 xl:grid-cols-5"
               >
                 {branches.map((branch, index) => (
                   <li
@@ -98,29 +66,30 @@ const ContactPage: NextPage = () => {
             </section>
 
             <section
-              className="relative bg-[#f7f5f2] shadow-[0_32px_90px_rgba(0,0,0,0.16)]"
+              id="business-inquiry"
+              className="relative scroll-mt-24 bg-[#f7f5f2] shadow-[0_32px_90px_rgba(0,0,0,0.16)] lg:scroll-mt-28"
               aria-labelledby="contact-form-title"
             >
               <div className="border-b border-[#e5ded7] bg-[#f7f5f2]">
-                <div className="px-6 py-10 sm:px-10 sm:py-12 lg:px-14">
+                <div className="px-6 py-7 sm:px-8">
                   <div className="flex items-center gap-4">
                     <span className="h-px w-10 bg-primary" aria-hidden="true" />
                     <p className="text-xs font-semibold uppercase tracking-[0.24em] text-primary">Business Inquiry</p>
                   </div>
                   <h2
                     id="contact-form-title"
-                    className="mt-5 text-3xl font-semibold leading-[1.15] tracking-[-0.04em] text-[#082f4f] sm:text-4xl"
+                    className="mt-4 text-3xl font-semibold leading-[1.15] tracking-[-0.04em] text-[#082f4f]"
                   >
                     提交合作需求
                   </h2>
                 </div>
               </div>
 
-              <div className="px-6 py-10 sm:px-10 sm:py-12 lg:px-14 lg:py-14">
-                <p className="max-w-2xl text-base leading-8 text-slate-600">
+              <div className="px-6 py-7 sm:px-8">
+                <p className="max-w-2xl text-sm leading-7 text-slate-600">
                   请留下基本信息与需求说明，我们将根据您的岗位规模、服务城市与到岗时间安排专业顾问对接。
                 </p>
-                <div className="mt-9">
+                <div className="mt-6">
                   <ContactForm formspreeId={FORMSPREE_ID} variant="minimal" />
                 </div>
               </div>

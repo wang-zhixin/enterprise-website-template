@@ -154,7 +154,7 @@ const CaseStudyDetail: NextPage<CaseStudyDetailProps> = ({ caseStudy }) => {
                 Let us help you achieve similar results for your organization.
               </p>
               <Link
-                href="/contact"
+                href="/contact#business-inquiry"
                 className="inline-block rounded-md bg-primary px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-primary/90"
               >
                 Contact Us Today
@@ -199,4 +199,4 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   };
 };
 
-export default CaseStudyDetail; 
+export default CaseStudyDetail;

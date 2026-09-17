@@ -49,7 +49,7 @@ const PartnerCompanies = () => {
             </p>
             <div className="mt-9 flex items-end gap-5">
               <span className="text-5xl font-semibold leading-none tracking-[-0.06em] text-primary sm:text-6xl">
-                1000+
+                5000+
               </span>
               <span className="pb-1 text-base font-semibold leading-7 tracking-[0.08em] text-white/60">
                 企业客户

@@ -27,7 +27,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const isMinimal = variant === 'minimal';
   const inputClassName = isMinimal
-    ? 'mt-2 block min-h-14 w-full border border-[#d8d0c8] bg-white px-4 text-base text-[#082f4f] outline-none placeholder:text-slate-400 focus:border-primary focus:ring-2 focus:ring-primary'
+    ? 'mt-2 block min-h-11 w-full border border-[#d8d0c8] bg-white px-4 text-sm text-[#082f4f] outline-none placeholder:text-slate-400 focus:border-primary focus:ring-2 focus:ring-primary'
     : 'mt-2 block min-h-12 w-full border-0 bg-white px-4 text-base text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary';
 
   const handleChange = (
@@ -81,7 +81,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
 
   return (
     <form onSubmit={handleSubmit} className={isMinimal ? 'm-0' : 'mt-10'}>
-      <div className={isMinimal ? 'grid grid-cols-1 gap-x-4 gap-y-6 sm:grid-cols-2' : 'grid grid-cols-1 gap-x-10 gap-y-8 sm:grid-cols-2'}>
+      <div className={isMinimal ? 'grid grid-cols-1 gap-x-4 gap-y-3 sm:grid-cols-2' : 'grid grid-cols-1 gap-x-10 gap-y-8 sm:grid-cols-2'}>
         <div>
           <label
             htmlFor="name"
@@ -167,14 +167,14 @@ export const ContactForm: React.FC<ContactFormProps> = ({
           <textarea
             name="message"
             id="message"
-            rows={4}
+            rows={3}
             value={formData.message}
             onChange={handleChange}
             required
             placeholder="请简要描述岗位规模、服务城市和到岗时间"
             className={
               isMinimal
-                ? 'mt-2 block min-h-32 w-full resize-y border border-[#d8d0c8] bg-white px-4 py-3 text-base text-[#082f4f] outline-none placeholder:text-slate-400 focus:border-primary focus:ring-2 focus:ring-primary'
+                ? 'mt-2 block min-h-20 w-full resize-y border border-[#d8d0c8] bg-white px-4 py-3 text-sm text-[#082f4f] outline-none placeholder:text-slate-400 focus:border-primary focus:ring-2 focus:ring-primary'
                 : 'mt-2 block w-full border-0 bg-white px-4 py-3 text-base text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary'
             }
           />
@@ -193,7 +193,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
           disabled={status === 'submitting'}
           className={
             isMinimal
-              ? 'flex min-h-16 w-full items-center justify-center bg-primary px-6 text-base font-semibold text-white transition-colors hover:bg-[#af3c34] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary disabled:cursor-not-allowed disabled:opacity-50 sm:px-7'
+              ? 'flex min-h-11 w-full items-center justify-center bg-primary px-6 text-sm font-semibold text-white transition-colors hover:bg-[#af3c34] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary disabled:cursor-not-allowed disabled:opacity-50 sm:px-7'
               : 'block min-h-12 w-full bg-primary px-5 text-center text-base font-semibold text-white transition-colors hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary disabled:cursor-not-allowed disabled:opacity-50'
           }
         >
