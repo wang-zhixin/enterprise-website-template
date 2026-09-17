@@ -2,6 +2,15 @@ import { NextPage } from 'next';
 import Image from 'next/image';
 import MainLayout from '../../components/layouts/MainLayout';
 
+const serviceCities = ['上海总部', '常州', '杭州', '武汉', '长沙', '深圳', '北京', '镇江', '芜湖', '安庆'];
+
+const deliverySignals = [
+  ['01', '200+', '招聘交付团队'],
+  ['02', '百万级', '自有简历库'],
+  ['03', '10万+', '活跃社群'],
+  ['04', 'AI', '智能招聘机器人'],
+];
+
 const AboutPage: NextPage = () => {
   return (
     <MainLayout
@@ -34,56 +43,81 @@ const AboutPage: NextPage = () => {
           </div>
         </header>
 
-        <section className="overflow-hidden bg-[#f2f1ee] px-6 py-24 sm:px-10 sm:py-32 lg:px-16 2xl:px-24 2xl:py-40" aria-labelledby="company-profile-title">
+        <section
+          className="relative isolate overflow-hidden bg-[#f3f0eb] px-6 py-24 sm:px-10 sm:py-32 lg:px-16 2xl:px-24 2xl:py-40"
+          aria-labelledby="company-profile-title"
+        >
+          <div
+            className="pointer-events-none absolute -right-[0.08em] top-8 -z-10 text-[12rem] font-semibold leading-none tracking-[-0.1em] text-[#082f4f]/[0.035] sm:text-[20rem] lg:text-[28rem]"
+            aria-hidden="true"
+          >
+            2017
+          </div>
+
           <div className="mx-auto w-full max-w-[1600px]">
-            <div className="grid gap-12 border-b border-[#082f4f]/25 pb-16 lg:grid-cols-[minmax(280px,0.34fr)_minmax(0,0.66fr)] lg:items-end lg:gap-20 lg:pb-20 2xl:gap-28">
-              <div>
-                <p className="text-sm uppercase tracking-[0.24em] text-primary">Company Profile</p>
-                <p className="mt-8 text-[5rem] font-semibold leading-none tracking-[-0.08em] text-primary sm:text-[7rem] 2xl:text-[8rem]">2017</p>
-                <p className="mt-5 max-w-sm text-sm leading-7 text-slate-500 sm:text-base">从上海出发，构建覆盖全国的人力资源服务网络</p>
+            <div className="grid gap-10 border-b border-[#082f4f]/20 pb-12 lg:grid-cols-[0.34fr_0.66fr] lg:items-end lg:gap-20 lg:pb-16 2xl:gap-28">
+              <div className="flex items-center gap-5">
+                <span className="text-xs tabular-nums tracking-[0.22em] text-primary">01</span>
+                <span className="h-px w-14 bg-primary" aria-hidden="true" />
+                <p className="text-sm uppercase tracking-[0.22em] text-primary">Company Profile</p>
               </div>
-              <div>
-                <h2 id="company-profile-title" className="text-4xl font-semibold leading-[1.16] tracking-[-0.045em] text-[#082f4f] sm:text-5xl lg:text-6xl 2xl:text-7xl">
-                  一家公司，
-                  <br />
-                  一套长期服务能力
-                </h2>
-                <p className="mt-8 text-sm uppercase tracking-[0.12em] text-[#082f4f]/50 sm:text-lg sm:tracking-[0.18em]">Rise your business through HRO</p>
-              </div>
+              <h2
+                id="company-profile-title"
+                className="max-w-5xl text-4xl font-semibold leading-[1.12] tracking-[-0.05em] text-[#082f4f] sm:text-5xl lg:text-6xl 2xl:text-7xl"
+              >
+                从2017出发，
+                <br />
+                走向全国服务网络
+              </h2>
             </div>
 
-            <div>
-              {[
-                [
-                  '01',
-                  '全国布局',
-                  '睐智人力成立于2017,经过多年睐智人力伙伴的努力奋斗，旗下有睐智人力、职得邦两个品牌,总部位于上海,在常州、杭州、武汉、长沙、深圳、北京、镇江、芜湖、安庆等城市设立分公司及分支机构，服务网络遍及300多座大中城市，服务客户近千家，外包员工4W多人，人力资源服务机构百强企业。',
-                ],
-                [
-                  '02',
-                  '招聘交付',
-                  '我们目前拥有200多人的招聘交付团队，最全的招聘渠道（其中包含百万级自有简历库，活跃数超10万的社群运营，社交门户平台合作，多平台直播宣讲模式等）拥有完善的招聘交付系统，员工管理系统等先进数字化运营工具。公司自主研发AI智能招聘机器人，目前已投入使用，为客户提供全方位、综合性、一站式服务，以数字服务赋能客户与行业。',
-                ],
-                [
-                  '03',
-                  '风险防控',
-                  '研发创立人力资源外包领域12道风险防控体系，全面为客户防范用工风险，保障客户招聘、薪酬、用工、员工关系管理等的准确性、合规性、时效性、安全性，助力和推动客户在快速变化的市场环境中用工无忧，降本增效，获得发展优势。',
-                ],
-                [
-                  '04',
-                  '企业使命',
-                  '在企业的不同发展阶段提供持续的服务，帮助客户持续地降本增效,卓越运营，提升企业的核心竞争力。我们的使命是通过睐智人力的外包等服务让您的企业发展的更好，更快',
-                ],
-              ].map(([number, label, content]) => (
-                <article
-                  key={label}
-                  className="grid gap-5 border-b border-[#082f4f]/20 py-10 sm:py-12 lg:grid-cols-[4rem_11rem_minmax(0,1fr)] lg:gap-10 xl:grid-cols-[5rem_14rem_minmax(0,1fr)] xl:py-14 2xl:gap-14"
-                >
-                  <span className="text-xs tabular-nums tracking-[0.22em] text-primary lg:pt-2">{number}</span>
-                  <h3 className="text-2xl font-semibold tracking-[-0.025em] text-[#082f4f] sm:text-3xl">{label}</h3>
-                  <p className="max-w-[960px] text-base leading-8 text-slate-600 sm:text-lg sm:leading-10">{content}</p>
-                </article>
-              ))}
+            <div className="relative mt-14 lg:min-h-[720px] lg:mt-20 2xl:min-h-[820px]">
+              <figure className="relative h-[360px] overflow-hidden sm:h-[500px] lg:absolute lg:inset-y-0 lg:left-0 lg:h-auto lg:w-[62%]">
+                <Image
+                  src="/3.jpg"
+                  alt="睐智人力品牌墙"
+                  fill
+                  sizes="(min-width: 1024px) 62vw, 100vw"
+                  className="object-cover object-center"
+                />
+                <div className="absolute inset-0 bg-[#031b2d]/20" />
+                <figcaption className="absolute bottom-0 left-0 bg-[#082f4f] px-6 py-4 text-xs uppercase tracking-[0.2em] text-white/75 sm:px-8">
+                  Shanghai · Since 2017
+                </figcaption>
+              </figure>
+
+              <article className="relative z-10 -mt-10 bg-white px-6 py-9 shadow-[0_28px_80px_rgba(8,47,79,0.12)] sm:mx-8 sm:px-10 sm:py-12 lg:ml-[48%] lg:mr-0 lg:mt-0 lg:px-14 lg:py-14 2xl:px-16 2xl:py-16">
+                <div className="flex items-end justify-between gap-8 border-b border-[#082f4f]/15 pb-8">
+                  <div>
+                    <p className="text-[4.5rem] font-semibold leading-none tracking-[-0.08em] text-primary sm:text-[6rem]">2017</p>
+                    <p className="mt-3 text-sm tracking-[0.08em] text-slate-500">睐智人力成立</p>
+                  </div>
+                  <p className="pb-2 text-right text-sm uppercase leading-7 tracking-[0.16em] text-[#082f4f]/45">
+                    Two Brands
+                    <br />
+                    One Network
+                  </p>
+                </div>
+
+                <p className="mt-8 text-base leading-8 text-slate-600 sm:text-lg sm:leading-10">
+                  睐智人力成立于2017,经过多年睐智人力伙伴的努力奋斗，旗下有睐智人力、职得邦两个品牌,总部位于上海,在常州、杭州、武汉、长沙、深圳、北京、镇江、芜湖、安庆等城市设立分公司及分支机构，服务网络遍及300多座大中城市，服务客户近千家，外包员工4W多人，人力资源服务机构百强企业。
+                </p>
+
+                <div className="mt-10 border-t border-[#082f4f]/15 pt-7">
+                  <p className="text-xs uppercase tracking-[0.22em] text-primary">Service Footprint</p>
+                  <ul role="list" className="mt-5 grid !ml-0 list-none grid-cols-2 gap-x-6 gap-y-4 sm:grid-cols-5 lg:grid-cols-2 xl:grid-cols-5">
+                    {serviceCities.map((city, index) => (
+                      <li key={city} className="flex items-center gap-2 !pl-0 text-sm text-[#082f4f]">
+                        <span className="h-1 w-1 shrink-0 bg-primary" aria-hidden="true" />
+                        <span>{city}</span>
+                        <span className="ml-auto text-[0.65rem] tabular-nums text-[#082f4f]/30">
+                          {String(index + 1).padStart(2, '0')}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </article>
             </div>
           </div>
         </section>
@@ -126,30 +160,52 @@ const AboutPage: NextPage = () => {
           </div>
         </section> */}
 
-        <section className="relative overflow-hidden bg-[#edecea] px-6 py-24 sm:px-10 sm:py-32 lg:px-16 2xl:px-24 2xl:py-40">
-          <div className="mx-auto grid w-full max-w-[1600px] items-center gap-16 lg:grid-cols-[0.58fr_0.42fr] 2xl:gap-24">
-            <div className="relative min-h-[620px] overflow-hidden sm:min-h-[700px] lg:min-h-[620px] 2xl:min-h-[760px]">
-              <Image
-                src="/3.jpg"
-                alt="睐智人力品牌墙"
-                fill
-                sizes="(min-width: 1024px) 58vw, 100vw"
-                className="object-cover object-center transition-transform duration-[1400ms] hover:scale-[1.03]"
-              />
-              <div className="absolute bottom-0 left-0 bg-primary px-7 py-5 text-sm font-semibold tracking-[0.12em] text-white">
-                DIGITAL DELIVERY
-              </div>
+        <section className="relative overflow-hidden bg-[#e9eff1] px-6 py-24 sm:px-10 sm:py-32 lg:px-16 2xl:px-24 2xl:py-40">
+          <div className="mx-auto w-full max-w-[1600px]">
+            <div className="flex items-center gap-5">
+              <span className="text-xs tabular-nums tracking-[0.22em] text-primary">02</span>
+              <span className="h-px w-14 bg-primary" aria-hidden="true" />
+              <p className="text-sm uppercase tracking-[0.22em] text-primary">Digital Delivery</p>
             </div>
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-primary">03 · Digital Delivery</p>
-              <h2 className="mt-7 text-4xl font-semibold leading-[1.12] tracking-[-0.05em] text-[#082f4f] sm:text-5xl 2xl:text-6xl">
-                数字化，
-                <br />
-                不是口号
-              </h2>
-              <p className="mt-10 text-base leading-9 text-slate-600 sm:text-lg sm:leading-10">
-                我们目前拥有200多人的招聘交付团队，最全的招聘渠道（其中包含百万级自有简历库，活跃数超10万的社群运营，社交门户平台合作，多平台直播宣讲模式等）拥有完善的招聘交付系统，员工管理系统等先进数字化运营工具。公司自主研发AI智能招聘机器人，目前已投入使用，为客户提供全方位、综合性、一站式服务，以数字服务赋能客户与行业。
-              </p>
+
+            <div className="relative mt-12 overflow-hidden bg-[#dce7eb] lg:min-h-[840px] 2xl:min-h-[920px]">
+              <div className="relative h-[360px] sm:h-[500px] lg:absolute lg:inset-0 lg:h-auto">
+                <Image
+                  src="/about/company.png"
+                  alt="数字化招聘交付团队协作场景"
+                  fill
+                  sizes="(min-width: 1024px) 100vw, 100vw"
+                  className="object-cover object-center lg:object-[62%_center]"
+                />
+                <div className="absolute inset-0 bg-[#082f4f]/10" />
+              </div>
+
+              <div className="relative z-10 flex flex-col lg:min-h-[840px] lg:justify-between 2xl:min-h-[920px]">
+                <article className="bg-[#edf2f3] px-6 py-10 sm:px-10 sm:py-14 lg:w-[52%] lg:px-14 lg:py-16 xl:w-[48%] 2xl:px-16 2xl:py-20">
+                  <p className="text-sm uppercase tracking-[0.18em] text-[#082f4f]/50">Recruitment Operating System</p>
+                  <h2 className="mt-6 text-4xl font-semibold leading-[1.12] tracking-[-0.05em] text-[#082f4f] sm:text-5xl lg:text-6xl 2xl:text-7xl">
+                    把招聘交付，
+                    <br />
+                    做成数字能力
+                  </h2>
+                  <p className="mt-8 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg sm:leading-10">
+                    我们目前拥有200多人的招聘交付团队，最全的招聘渠道（其中包含百万级自有简历库，活跃数超10万的社群运营，社交门户平台合作，多平台直播宣讲模式等）拥有完善的招聘交付系统，员工管理系统等先进数字化运营工具。公司自主研发AI智能招聘机器人，目前已投入使用，为客户提供全方位、综合性、一站式服务，以数字服务赋能客户与行业。
+                  </p>
+                </article>
+
+                <div className="grid bg-[#061f34] text-white sm:grid-cols-2 lg:grid-cols-4">
+                  {deliverySignals.map(([number, value, label], index) => (
+                    <div
+                      key={label}
+                      className={`relative px-6 py-7 sm:px-8 sm:py-8 ${index > 0 ? 'border-t border-white/15 sm:border-t-0' : ''} ${index % 2 === 1 ? 'sm:border-l sm:border-white/15' : ''} ${index > 0 ? 'lg:border-l lg:border-white/15' : ''}`}
+                    >
+                      <span className="absolute right-5 top-5 text-xs tabular-nums tracking-[0.18em] text-white/30">{number}</span>
+                      <p className="text-3xl font-semibold tracking-[-0.05em] text-primary sm:text-4xl">{value}</p>
+                      <p className="mt-3 text-sm tracking-[0.06em] text-white/65">{label}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -159,7 +215,7 @@ const AboutPage: NextPage = () => {
             <div className="grid gap-12 lg:grid-cols-[0.4fr_0.6fr] lg:items-end lg:gap-16 2xl:gap-24">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.22em] text-primary">
-                  04 · Qualification &amp; Honour
+                  03 · Qualification &amp; Honour
                 </p>
                 <h2 className="mt-7 text-4xl font-semibold leading-[1.12] tracking-[-0.05em] text-[#082f4f] sm:text-5xl 2xl:text-6xl">
                   资质，是可以
@@ -224,7 +280,7 @@ const AboutPage: NextPage = () => {
           </div>
           <div className="mx-auto grid w-full max-w-[1600px] gap-12 lg:grid-cols-[0.38fr_0.62fr] lg:gap-16 2xl:gap-24">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-white/65">05 · Risk Control</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-white/65">04 · Risk Control</p>
               <h2 className="mt-7 text-4xl font-semibold leading-[1.12] tracking-[-0.05em] text-white sm:text-5xl 2xl:text-6xl">
                 12道风险
                 <br />
