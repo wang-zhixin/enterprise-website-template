@@ -12,12 +12,12 @@ const PartnersPage: NextPage = () => {
       <div className="bg-white">
         <header className="relative isolate min-h-[66svh] overflow-hidden bg-[#061f34] text-white sm:min-h-[70svh]">
           <Image
-            src="/3.jpg"
-            alt="睐智人力品牌墙"
+            src="/2.jpg"
+            alt="蓝天下的睐智人力品牌旗帜"
             fill
             priority
             sizes="100vw"
-            className="-z-20 object-cover object-[62%_48%]"
+            className="-z-20 object-cover object-[center_48%]"
           />
           <div className="absolute inset-0 -z-10 bg-[#031b2d]/68" />
           <div className="absolute inset-0 -z-10 bg-gradient-to-t from-[#031b2d]/75 via-transparent to-[#031b2d]/30" />

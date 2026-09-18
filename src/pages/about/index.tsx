@@ -11,6 +11,21 @@ const deliverySignals = [
   ['04', 'AI', '智能招聘机器人'],
 ];
 
+const riskControls = [
+  '招聘入职管控',
+  '试用期管控',
+  '劳动关系管控',
+  '社会保险管控',
+  '考勤管理管控',
+  '调岗降薪管控',
+  '工伤处理管控',
+  '劳动争议管控',
+  '奖惩制度管控',
+  '工资管理管控',
+  '职业健康管控',
+  '离职管理管控',
+];
+
 const AboutPage: NextPage = () => {
   return (
     <MainLayout
@@ -271,26 +286,93 @@ const AboutPage: NextPage = () => {
           </div>
         </section>
 
-        <section className="relative isolate overflow-hidden bg-primary px-6 py-24 text-white sm:px-10 sm:py-32 lg:px-16 2xl:px-24 2xl:py-40">
-          <div
-            className="pointer-events-none absolute -right-10 top-1/2 -z-10 -translate-y-1/2 text-[18rem] font-semibold leading-none tracking-[-0.1em] text-white/[0.09] sm:text-[30rem]"
-            aria-hidden="true"
-          >
-            12
-          </div>
-          <div className="mx-auto grid w-full max-w-[1600px] gap-12 lg:grid-cols-[0.38fr_0.62fr] lg:gap-16 2xl:gap-24">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-white/65">04 · Risk Control</p>
-              <h2 className="mt-7 text-4xl font-semibold leading-[1.12] tracking-[-0.05em] text-white sm:text-5xl 2xl:text-6xl">
-                12道风险
-                <br />
-                防控体系
+        <section aria-labelledby="risk-control-title" className="risk-system relative overflow-hidden bg-primary px-6 py-20 text-white sm:px-10 sm:py-24 lg:px-16 2xl:px-24 2xl:py-28">
+          <div className="mx-auto grid w-full max-w-[1600px] gap-x-10 gap-y-12 lg:grid-cols-[0.38fr_0.62fr] lg:gap-x-16 lg:gap-y-16 2xl:gap-x-24">
+            <div className="risk-heading">
+              <svg className="risk-shield" viewBox="0 0 260 290" fill="none" aria-hidden="true">
+                <path d="M130 24 224 60v79c0 62-42 103-94 127-52-24-94-65-94-127V60l94-36Z" stroke="currentColor" strokeWidth="0.8" />
+                <path d="M130 40 210 70v69c0 53-35 91-80 114" stroke="currentColor" strokeOpacity="0.45" strokeWidth="0.8" />
+                <path d="m102 139 20 20 40-46" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              <p className="relative text-xs font-medium uppercase tracking-[0.24em] text-white/80">04 · Risk Control</p>
+              <h2 id="risk-control-title" className="relative mt-6 scroll-mt-28 text-4xl font-semibold leading-[1.15] tracking-[-0.05em] text-white sm:text-5xl 2xl:text-6xl">
+                12道风险<br />防控体系
               </h2>
             </div>
-            <p className="text-lg leading-10 text-white/80 sm:text-xl sm:leading-[2.1]">
-              研发创立人力资源外包领域12道风险防控体系，全面为客户防范用工风险，保障客户招聘、薪酬、用工、员工关系管理等的准确性、合规性、时效性、安全性，助力和推动客户在快速变化的市场环境中用工无忧，降本增效，获得发展优势。
-            </p>
+            <div className="relative min-w-0 lg:pt-10">
+              <p className="text-base leading-8 text-white/90 sm:text-lg sm:leading-9">
+                研发创立人力资源外包领域12道风险防控体系，全面为客户防范用工风险，保障客户招聘、薪酬、用工、员工关系管理等的准确性、合规性、时效性、安全性，助力和推动客户在快速变化的市场环境中用工无忧，降本增效，获得发展优势。
+              </p>
+            </div>
+            <ol className="risk-lines" aria-label="12道风险防控内容">
+                {riskControls.map((control, index) => (
+                  <li key={control} className="risk-line">
+                    <span className="risk-line-number">{String(index + 1).padStart(2, '0')}</span>
+                    <span className="risk-line-name">{control}</span>
+                  </li>
+                ))}
+            </ol>
           </div>
+          <style jsx>{`
+            .risk-heading { position: relative; isolation: isolate; }
+            .risk-shield {
+              position: absolute;
+              z-index: -1;
+              pointer-events: none;
+              width: 180px;
+              max-width: none;
+              top: -60px;
+              left: 110px;
+              color: rgba(255,255,255,0.16);
+            }
+            .risk-lines {
+              display: grid;
+              grid-column: 1 / -1;
+              grid-template-columns: repeat(6, minmax(0, 1fr));
+              column-gap: 28px;
+              margin: 0 !important;
+              padding: 0;
+              list-style: none;
+            }
+            .risk-line {
+              display: flex;
+              align-items: baseline;
+              gap: 12px;
+              min-width: 0;
+              margin: 0 !important;
+              padding: 22px 0 !important;
+              border-top: 1px solid rgba(255,255,255,0.22);
+              color: #fff;
+            }
+            .risk-line-number {
+              flex-shrink: 0;
+              font-size: 11px;
+              font-variant-numeric: tabular-nums;
+              letter-spacing: 0.06em;
+              color: rgba(255,255,255,0.8);
+            }
+            .risk-line-name { font-size: 16px; line-height: 1.6; font-weight: 400; }
+            @media (min-width: 1536px) {
+              .risk-shield { width: 200px; top: -70px; left: 145px; }
+              .risk-line-name { font-size: 18px; }
+              .risk-lines { column-gap: 32px; }
+            }
+            @media (min-width: 1024px) and (max-width: 1199px) {
+              .risk-lines { column-gap: 18px; }
+              .risk-line { gap: 8px; }
+              .risk-line-name { font-size: 14px; }
+            }
+            @media (max-width: 1023px) {
+              .risk-shield { width: 160px; top: -45px; left: 110px; }
+              .risk-lines { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+            }
+            @media (max-width: 639px) {
+              .risk-lines { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 20px; }
+              .risk-line { gap: 8px; padding: 18px 0 !important; }
+              .risk-line-name { font-size: 14px; }
+              .risk-shield { width: 120px; top: -20px; left: 75px; }
+            }
+          `}</style>
         </section>
 
         <section className="relative isolate overflow-hidden bg-[#061f34] px-6 py-28 text-white sm:px-10 sm:py-36 lg:px-16 2xl:px-24 2xl:py-48">

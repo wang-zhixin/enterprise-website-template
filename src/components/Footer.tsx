@@ -83,10 +83,6 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex flex-col gap-3 border-t border-white/10 py-8 text-sm text-white/40 sm:flex-row sm:items-center sm:justify-between">
-          <p>&copy; {new Date().getFullYear()} 睐智人力资源（上海）有限公司</p>
-          <p>旗下品牌：睐智人力 · 职得邦</p>
-        </div>
       </div>
     </footer>
   );

@@ -29,7 +29,7 @@ const Navbar = () => {
       }`}
     >
       <nav
-        className="grid h-20 w-full grid-cols-[1fr_auto] items-center px-6 sm:px-8 lg:grid-cols-[1fr_auto_1fr] lg:px-10"
+        className="grid h-20 w-full grid-cols-[1fr_auto] items-center px-6 sm:px-10 lg:grid-cols-[1fr_auto_1fr] lg:px-16 2xl:px-24"
         aria-label="主导航"
       >
         <div className="justify-self-start">
