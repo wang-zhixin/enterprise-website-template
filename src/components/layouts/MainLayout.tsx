@@ -11,7 +11,7 @@ interface MainLayoutProps {
 
 const MainLayout = ({ children, title = '睐智人力', description = '专业人力资源外包服务机构' }: MainLayoutProps) => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="flex min-h-screen flex-col bg-white">
       <Head>
         <title>{title}</title>
         <link rel="icon" type="image/png" href="/ruise-favicon.png" />
@@ -22,7 +22,7 @@ const MainLayout = ({ children, title = '睐智人力', description = '专业人
 
       <Navbar />
 
-      <main>
+      <main className="flex flex-1 flex-col">
         {children}
       </main>
 

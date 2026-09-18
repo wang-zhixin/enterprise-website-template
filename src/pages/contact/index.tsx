@@ -11,8 +11,8 @@ const ContactPage: NextPage = () => {
       title="联系我们 - 睐智人力"
       description="联系睐智人力，咨询岗位外包、批量招聘、劳务派遣与灵活用工服务"
     >
-      <div className="bg-[#061f34]">
-        <div className="relative isolate overflow-hidden px-6 pb-28 pt-28 sm:px-10 sm:pb-36 lg:px-16 2xl:px-24 2xl:pb-44">
+      <div className="flex flex-1 flex-col bg-[#061f34] pt-20">
+        <div className="relative isolate flex flex-1 items-center overflow-hidden px-6 py-12 sm:px-10 sm:py-16 lg:px-16 2xl:px-24 2xl:py-20">
           <svg
             className="pointer-events-none absolute left-0 top-0 -z-10 h-full w-full text-white/[0.06]"
             viewBox="0 0 1600 900"
