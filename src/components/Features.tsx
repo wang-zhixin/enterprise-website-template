@@ -21,7 +21,7 @@ const Features = () => {
       </div>
 
       <div className="mx-auto grid w-full max-w-[1600px] gap-16 lg:grid-cols-[0.78fr_1.22fr] 2xl:gap-24">
-        <div className="lg:sticky lg:top-32 lg:h-fit">
+        <div data-reveal className="lg:sticky lg:top-32 lg:h-fit">
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary">
             Service Portfolio
           </p>
@@ -45,6 +45,7 @@ const Features = () => {
         <ol className="!ml-0 list-none border-t border-slate-400/60">
           {services.map(([number, code, name, description], index) => (
             <li
+              data-reveal="right"
               key={name}
               className="group relative grid gap-5 overflow-hidden border-b border-slate-400/60 !pl-0 py-8 transition-transform duration-500 hover:translate-x-2 sm:grid-cols-[4rem_1fr] sm:items-start sm:gap-7 lg:py-10"
             >

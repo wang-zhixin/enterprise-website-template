@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import CountUp from './motion/CountUp';
 import { partnerLogos } from '@/config/partners';
 
 const logoRows = [
@@ -25,7 +26,7 @@ const PartnerCompanies = () => {
       />
 
       <div className="mx-auto w-full max-w-[1600px]">
-        <div className="grid gap-14 lg:grid-cols-[0.82fr_1.18fr] lg:items-end lg:gap-16 2xl:gap-24">
+        <div data-reveal className="grid gap-14 lg:grid-cols-[0.82fr_1.18fr] lg:items-end lg:gap-16 2xl:gap-24">
           <div>
             <div className="flex items-center gap-4">
               <span className="h-px w-14 bg-primary" aria-hidden="true" />
@@ -49,7 +50,7 @@ const PartnerCompanies = () => {
             </p>
             <div className="mt-9 flex items-end gap-5">
               <span className="text-5xl font-semibold leading-none tracking-[-0.06em] text-primary sm:text-6xl">
-                5000+
+                <CountUp value={5000} suffix="+" />
               </span>
               <span className="pb-1 text-base font-semibold leading-7 tracking-[0.08em] text-white/60">
                 企业客户
@@ -60,7 +61,7 @@ const PartnerCompanies = () => {
           </div>
         </div>
 
-        <div className="relative mt-20 sm:mt-24">
+        <div data-reveal className="relative mt-20 sm:mt-24">
           <div
             className="absolute -left-6 top-0 h-full w-1 bg-primary sm:-left-10 lg:-left-16 xl:-left-24"
             aria-hidden="true"

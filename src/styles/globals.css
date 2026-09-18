@@ -269,3 +269,23 @@
     animation: none;
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .home-motion *,
+  .home-motion *::before,
+  .home-motion *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .home-motion img:hover,
+  .home-motion li:hover {
+    transform: none !important;
+  }
+}
+
+@media screen and (prefers-reduced-motion: no-preference) {
+  .home-motion [data-reveal-pending] {
+    opacity: 0;
+  }
+}

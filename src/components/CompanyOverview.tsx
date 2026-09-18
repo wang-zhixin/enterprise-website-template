@@ -1,62 +1,5 @@
-import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
-
-interface CountUpProps {
-  value: number;
-  suffix: string;
-  start: boolean;
-  delay: number;
-}
-
-const formatNumber = new Intl.NumberFormat('zh-CN');
-
-const CountUp = ({ value, suffix, start, delay }: CountUpProps) => {
-  const [displayValue, setDisplayValue] = useState(0);
-
-  useEffect(() => {
-    if (!start) return;
-
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      setDisplayValue(value);
-      return;
-    }
-
-    let animationFrame = 0;
-    let startedAt: number | null = null;
-    const timeout = window.setTimeout(() => {
-      const animate = (timestamp: number) => {
-        startedAt ??= timestamp;
-        const progress = Math.min((timestamp - startedAt) / 1400, 1);
-        const easedProgress = 1 - Math.pow(1 - progress, 3);
-        setDisplayValue(Math.round(value * easedProgress));
-
-        if (progress < 1) {
-          animationFrame = window.requestAnimationFrame(animate);
-        }
-      };
-
-      animationFrame = window.requestAnimationFrame(animate);
-    }, delay);
-
-    return () => {
-      window.clearTimeout(timeout);
-      window.cancelAnimationFrame(animationFrame);
-    };
-  }, [delay, start, value]);
-
-  return (
-    <>
-      <span aria-hidden="true">
-        {formatNumber.format(displayValue)}
-        {suffix}
-      </span>
-      <span className="sr-only">
-        {formatNumber.format(value)}
-        {suffix}
-      </span>
-    </>
-  );
-};
+import CountUp from './motion/CountUp';
 
 const stats = [
   ['服务企业', 5000, '+', '覆盖不同规模与发展阶段的企业客户'],
@@ -66,35 +9,8 @@ const stats = [
 ] as const;
 
 const CompanyOverview = () => {
-  const sectionRef = useRef<HTMLElement>(null);
-  const [startCounting, setStartCounting] = useState(false);
-
-  useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
-
-    if (!('IntersectionObserver' in window)) {
-      setStartCounting(true);
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setStartCounting(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.25 },
-    );
-
-    observer.observe(section);
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <section
-      ref={sectionRef}
       className="relative isolate overflow-hidden bg-[#061f34]"
       aria-labelledby="company-overview-title"
     >
@@ -116,7 +32,7 @@ const CompanyOverview = () => {
         </div>
 
         <div className="relative mx-auto flex min-h-[720px] w-full max-w-[1800px] items-end px-6 pb-16 pt-28 text-white sm:min-h-[760px] sm:px-10 sm:pb-20 lg:px-16 lg:pb-20 2xl:min-h-[980px] 2xl:px-24 2xl:pb-24 2xl:pt-32">
-          <div className="max-w-4xl">
+          <div data-reveal className="max-w-4xl">
             <div className="flex items-center gap-4">
               <span className="h-px w-14 bg-primary" aria-hidden="true" />
               <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary">
@@ -156,15 +72,16 @@ const CompanyOverview = () => {
         <dl className="mx-auto grid w-full max-w-[1800px] py-14 sm:grid-cols-2 sm:py-16 lg:grid-cols-4 lg:py-20">
           {stats.map(([label, value, suffix, description], index) => (
             <div
+              data-reveal
               key={label}
-              className="relative border-b border-slate-300 py-8 first:pt-0 last:border-b-0 sm:px-8 sm:first:pl-0 sm:[&:nth-child(odd)]:border-r lg:border-b-0 lg:border-r lg:py-0 lg:first:px-0 lg:last:border-r-0"
+              className="relative flex flex-col items-center border-b border-slate-300 py-8 first:pt-0 last:border-b-0 sm:px-8 sm:first:pl-0 sm:[&:nth-child(odd)]:border-r lg:border-b-0 lg:border-r lg:py-0 lg:first:px-0 lg:last:border-r-0"
             >
               <dt className="flex items-center justify-between gap-4 text-sm font-semibold tracking-[0.1em] text-[#082f4f]">
                 {label}
-                <span className="text-xs text-slate-400">0{index + 1}</span>
+                {/* <span className="text-xs text-slate-400">0{index + 1}</span> */}
               </dt>
               <dd className="mt-6 text-4xl font-semibold tracking-[-0.06em] text-primary tabular-nums sm:text-5xl xl:text-6xl">
-                <CountUp value={value} suffix={suffix} start={startCounting} delay={index * 120} />
+                <CountUp value={value} suffix={suffix} />
               </dd>
               <dd className="mt-5 max-w-xs text-base leading-8 text-slate-500">{description}</dd>
             </div>

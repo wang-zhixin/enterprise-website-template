@@ -21,7 +21,7 @@ const Careers = () => {
       <div className="absolute inset-0 z-10 bg-[#031b2d]/70" />
       <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#031b2d]/25 via-transparent to-[#031b2d]/85" />
 
-      <div className="relative z-20 mx-auto flex min-h-[780px] w-full max-w-[1600px] flex-col justify-center px-6 py-24 sm:px-10 sm:py-28 lg:px-16 2xl:min-h-[900px] 2xl:px-24 2xl:py-36">
+      <div data-reveal className="relative z-20 mx-auto flex min-h-[780px] w-full max-w-[1600px] flex-col justify-center px-6 py-24 sm:px-10 sm:py-28 lg:px-16 2xl:min-h-[900px] 2xl:px-24 2xl:py-36">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <p className="text-sm uppercase tracking-[0.24em] text-primary">Professional Qualification</p>
           <p className="text-xs uppercase tracking-[0.2em] text-white/45 sm:text-sm">Licensed · Trusted · Nationwide</p>

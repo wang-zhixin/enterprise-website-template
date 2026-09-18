@@ -29,7 +29,7 @@ const Testimonials = () => {
       />
 
       <div className="mx-auto w-full max-w-[1600px]">
-        <div className="mx-auto max-w-4xl text-center">
+        <div data-reveal className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary">
             Employment Risk Control
           </p>
@@ -41,7 +41,7 @@ const Testimonials = () => {
           </p>
         </div>
 
-        <div className="mt-20 grid items-center gap-10 lg:grid-cols-[1fr_0.72fr_1fr] lg:gap-12">
+        <div data-reveal className="mt-20 grid items-center gap-10 lg:grid-cols-[1fr_0.72fr_1fr] lg:gap-12">
           <ol className="!ml-0 list-none">
             {leftControls.map((control, index) => (
               <li

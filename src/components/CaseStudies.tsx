@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import CountUp from './motion/CountUp';
 import Link from 'next/link';
 
 const cases = [
@@ -28,7 +29,7 @@ const CaseStudies = () => {
   return (
     <section className="overflow-hidden bg-white py-24 sm:py-32 2xl:py-40">
       <div className="px-6 sm:px-10 lg:px-16 2xl:px-24">
-        <div className="mx-auto flex w-full max-w-[1600px] flex-col gap-10 sm:flex-row sm:items-end sm:justify-between">
+        <div data-reveal className="mx-auto flex w-full max-w-[1600px] flex-col gap-10 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary">
               Customer Stories
@@ -80,7 +81,7 @@ const CaseStudies = () => {
                   : 'relative flex min-h-[620px] items-end px-6 py-12 text-white sm:min-h-[700px] sm:px-10 sm:py-16 lg:justify-end lg:px-16 lg:py-16 2xl:min-h-[760px] 2xl:px-28 2xl:py-20'
               }
             >
-              <div className="max-w-2xl">
+              <div data-reveal={index === 0 ? 'left' : 'right'} className="max-w-2xl">
                 <div className="flex items-center gap-5">
                   <span className="text-sm font-semibold tracking-[0.2em] text-primary">{item.number}</span>
                   <span className="h-px w-16 bg-white/35" aria-hidden="true" />
@@ -94,7 +95,7 @@ const CaseStudies = () => {
                   {item.metrics.map((metric) => (
                     <div key={metric.label}>
                       <dd className="text-3xl font-semibold tracking-[-0.05em] text-primary sm:text-4xl">
-                        {metric.value}
+                        <CountUp value={parseInt(metric.value, 10)} suffix="+" />
                       </dd>
                       <dt className="mt-3 text-sm tracking-[0.04em] text-white/60">{metric.label}</dt>
                     </div>
