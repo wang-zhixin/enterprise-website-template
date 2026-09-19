@@ -1,3 +1,5 @@
+import CountUp from '../../components/motion/CountUp';
+import { useScrollReveal } from '../../hooks/useScrollReveal';
 import { NextPage } from 'next';
 import Image from 'next/image';
 import MainLayout from '../../components/layouts/MainLayout';
@@ -27,12 +29,14 @@ const riskControls = [
 ];
 
 const AboutPage: NextPage = () => {
+  const motionRoot = useScrollReveal();
+
   return (
     <MainLayout
       title="关于我们 - 睐智人力"
       description="了解睐智人力的服务资质、全国服务网络、数字化招聘交付能力与风险防控体系"
     >
-      <div className="bg-white">
+      <div ref={motionRoot} className="site-motion bg-white">
         <header className="relative flex min-h-screen overflow-hidden bg-transparent text-white lg:h-screen lg:min-h-[680px]">
           <Image
             src="/1.jpg"
@@ -45,7 +49,7 @@ const AboutPage: NextPage = () => {
           <div className="absolute inset-0 z-10 bg-[#082f4f]/[0.25]" />
           <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#031b2d]/[0.18] via-transparent to-[#031b2d]/[0.32]" />
 
-          <div className="absolute inset-x-0 top-1/2 z-20 -translate-y-1/2 px-6 text-center sm:px-10">
+          <div data-reveal className="absolute inset-x-0 top-1/2 z-20 -translate-y-1/2 px-6 text-center sm:px-10">
             <h1 className="mx-auto whitespace-nowrap text-[clamp(1.4rem,7vw,4.6rem)] font-semibold leading-[1.15] tracking-[-0.055em] text-white drop-shadow-[0_3px_14px_rgba(8,47,79,0.42)] 2xl:text-[5.5rem]">
               人力资源服务机构百强企业
             </h1>
@@ -70,7 +74,7 @@ const AboutPage: NextPage = () => {
           </div>
 
           <div className="mx-auto w-full max-w-[1600px]">
-            <div className="grid gap-10 border-b border-[#082f4f]/20 pb-12 lg:grid-cols-[0.34fr_0.66fr] lg:items-end lg:gap-20 lg:pb-16 2xl:gap-28">
+            <div data-reveal className="grid gap-10 border-b border-[#082f4f]/20 pb-12 lg:grid-cols-[0.34fr_0.66fr] lg:items-end lg:gap-20 lg:pb-16 2xl:gap-28">
               <div className="flex items-center gap-5">
                 <span className="text-xs tabular-nums tracking-[0.22em] text-primary">01</span>
                 <span className="h-px w-14 bg-primary" aria-hidden="true" />
@@ -86,7 +90,7 @@ const AboutPage: NextPage = () => {
               </h2>
             </div>
 
-            <div className="relative mt-14 lg:min-h-[720px] lg:mt-20 2xl:min-h-[820px]">
+            <div data-reveal className="relative mt-14 lg:min-h-[720px] lg:mt-20 2xl:min-h-[820px]">
               <figure className="relative h-[360px] overflow-hidden sm:h-[500px] lg:absolute lg:inset-y-0 lg:left-0 lg:h-auto lg:w-[62%]">
                 <Image
                   src="/3.jpg"
@@ -162,7 +166,7 @@ const AboutPage: NextPage = () => {
                     ['4W+', '外包员工'],
                   ].map(([value, label]) => (
                     <div key={label}>
-                      <p className="text-3xl font-semibold tracking-[-0.05em] text-primary sm:text-4xl">{value}</p>
+                      <p className="text-3xl font-semibold tracking-[-0.05em] text-primary sm:text-4xl">{value === '200+' ? <CountUp value={200} suffix="+" /> : value === '10万+' ? <CountUp value={10} suffix="万+" /> : value}</p>
                       <p className="mt-2 text-sm tracking-[0.04em] text-white/55">{label}</p>
                     </div>
                   ))}
@@ -177,7 +181,7 @@ const AboutPage: NextPage = () => {
 
         <section className="relative overflow-hidden bg-[#e9eff1] px-6 py-24 sm:px-10 sm:py-32 lg:px-16 2xl:px-24 2xl:py-40">
           <div className="mx-auto w-full max-w-[1600px]">
-            <div className="flex items-center gap-5">
+            <div data-reveal className="flex items-center gap-5">
               <span className="text-xs tabular-nums tracking-[0.22em] text-primary">02</span>
               <span className="h-px w-14 bg-primary" aria-hidden="true" />
               <p className="text-sm uppercase tracking-[0.22em] text-primary">Digital Delivery</p>
@@ -196,7 +200,7 @@ const AboutPage: NextPage = () => {
               </div>
 
               <div className="relative z-10 flex flex-col lg:min-h-[840px] lg:justify-between 2xl:min-h-[920px]">
-                <article className="bg-[#edf2f3] px-6 py-10 sm:px-10 sm:py-14 lg:w-[52%] lg:px-14 lg:py-16 xl:w-[48%] 2xl:px-16 2xl:py-20">
+                <article data-reveal className="bg-[#edf2f3] px-6 py-10 sm:px-10 sm:py-14 lg:w-[52%] lg:px-14 lg:py-16 xl:w-[48%] 2xl:px-16 2xl:py-20">
                   <p className="text-sm uppercase tracking-[0.18em] text-[#082f4f]/50">Recruitment Operating System</p>
                   <h2 className="mt-6 text-4xl font-semibold leading-[1.12] tracking-[-0.05em] text-[#082f4f] sm:text-5xl lg:text-6xl 2xl:text-7xl">
                     把招聘交付，
@@ -211,11 +215,12 @@ const AboutPage: NextPage = () => {
                 <div className="grid bg-[#061f34] text-white sm:grid-cols-2 lg:grid-cols-4">
                   {deliverySignals.map(([number, value, label], index) => (
                     <div
+                      data-reveal
                       key={label}
                       className={`relative px-6 py-7 sm:px-8 sm:py-8 ${index > 0 ? 'border-t border-white/15 sm:border-t-0' : ''} ${index % 2 === 1 ? 'sm:border-l sm:border-white/15' : ''} ${index > 0 ? 'lg:border-l lg:border-white/15' : ''}`}
                     >
                       <span className="absolute right-5 top-5 text-xs tabular-nums tracking-[0.18em] text-white/30">{number}</span>
-                      <p className="text-3xl font-semibold tracking-[-0.05em] text-primary sm:text-4xl">{value}</p>
+                      <p className="text-3xl font-semibold tracking-[-0.05em] text-primary sm:text-4xl">{value === '200+' ? <CountUp value={200} suffix="+" /> : value === '10万+' ? <CountUp value={10} suffix="万+" /> : value}</p>
                       <p className="mt-3 text-sm tracking-[0.06em] text-white/65">{label}</p>
                     </div>
                   ))}
@@ -227,7 +232,7 @@ const AboutPage: NextPage = () => {
 
         <section className="overflow-hidden bg-white px-6 py-24 sm:px-10 sm:py-32 lg:px-16 2xl:px-24 2xl:py-40">
           <div className="mx-auto w-full max-w-[1600px]">
-            <div className="grid gap-12 lg:grid-cols-[0.4fr_0.6fr] lg:items-end lg:gap-16 2xl:gap-24">
+            <div data-reveal className="grid gap-12 lg:grid-cols-[0.4fr_0.6fr] lg:items-end lg:gap-16 2xl:gap-24">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.22em] text-primary">
                   03 · Qualification &amp; Honour
@@ -243,7 +248,7 @@ const AboutPage: NextPage = () => {
               </p>
             </div>
 
-            <div className="relative mt-20 min-h-[920px] sm:min-h-[1080px] lg:min-h-[900px]">
+            <div data-reveal className="relative mt-20 min-h-[920px] sm:min-h-[1080px] lg:min-h-[900px]">
               <figure className="absolute left-0 top-0 w-[78%] bg-[#f1f3f2] p-6 sm:w-[62%] sm:p-10 lg:w-[48%]">
                 <Image
                   src="/company/qualification-credit.jpg"
@@ -287,7 +292,7 @@ const AboutPage: NextPage = () => {
         </section>
 
         <section aria-labelledby="risk-control-title" className="risk-system relative overflow-hidden bg-primary px-6 py-20 text-white sm:px-10 sm:py-24 lg:px-16 2xl:px-24 2xl:py-28">
-          <div className="mx-auto grid w-full max-w-[1600px] gap-x-10 gap-y-12 lg:grid-cols-[0.38fr_0.62fr] lg:gap-x-16 lg:gap-y-16 2xl:gap-x-24">
+          <div data-reveal className="mx-auto grid w-full max-w-[1600px] gap-x-10 gap-y-12 lg:grid-cols-[0.38fr_0.62fr] lg:gap-x-16 lg:gap-y-16 2xl:gap-x-24">
             <div className="risk-heading">
               <svg className="risk-shield" viewBox="0 0 260 290" fill="none" aria-hidden="true">
                 <path d="M130 24 224 60v79c0 62-42 103-94 127-52-24-94-65-94-127V60l94-36Z" stroke="currentColor" strokeWidth="0.8" />
@@ -380,7 +385,7 @@ const AboutPage: NextPage = () => {
             className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[34rem] w-[34rem] -translate-x-1/2 -translate-y-1/2 rounded-full border border-primary/25 sm:h-[50rem] sm:w-[50rem]"
             aria-hidden="true"
           />
-          <div className="mx-auto max-w-[1400px] text-center">
+          <div data-reveal className="mx-auto max-w-[1400px] text-center">
             <p className="mx-auto max-w-5xl text-xl font-medium leading-[1.9] text-white/70 sm:text-2xl sm:leading-[1.9]">
               在企业的不同发展阶段提供持续的服务，帮助客户持续地降本增效,卓越运营，提升企业的核心竞争力。我们的使命是通过睐智人力的外包等服务让您的企业发展的更好，更快
             </p>

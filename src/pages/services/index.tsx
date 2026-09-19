@@ -1,3 +1,4 @@
+import { useScrollReveal } from '../../hooks/useScrollReveal';
 import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -54,12 +55,14 @@ const riskControls = [
 ];
 
 const ServicesPage: NextPage = () => {
+  const motionRoot = useScrollReveal();
+
   return (
     <MainLayout
       title="产品服务 - 睐智人力"
       description="睐智人力提供HRO岗位外包、RPO批量招聘、劳务派遣、灵活用工及员工全生命周期服务"
     >
-      <div className="bg-white">
+      <div ref={motionRoot} className="site-motion bg-white">
         <header className="relative min-h-[82vh] overflow-hidden bg-[#061f34]">
           <Image
             src="/68aed5cb7b8e7326e4f8b470af50b14.jpg"
@@ -77,7 +80,7 @@ const ServicesPage: NextPage = () => {
             HRO
           </div>
           <div className="relative mx-auto flex min-h-[82vh] w-full max-w-[1800px] items-end px-6 pb-16 pt-32 sm:px-10 sm:pb-20 lg:px-16 lg:pb-20 2xl:px-24 2xl:pb-24">
-            <div className="max-w-5xl text-white">
+            <div data-reveal className="max-w-5xl text-white">
               <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary">
                 Products &amp; Services
               </p>
@@ -95,7 +98,7 @@ const ServicesPage: NextPage = () => {
 
         <section className="relative overflow-hidden bg-[#f1f4f3] px-6 py-24 sm:px-10 sm:py-32 lg:px-16 2xl:px-24 2xl:py-40">
           <div className="mx-auto grid w-full max-w-[1600px] gap-16 lg:grid-cols-[0.64fr_1.36fr] 2xl:gap-24">
-            <div className="lg:sticky lg:top-32 lg:h-fit">
+            <div data-reveal className="lg:sticky lg:top-32 lg:h-fit">
               <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary">Service Index</p>
               <h2 className="mt-7 text-4xl font-semibold leading-[1.12] tracking-[-0.05em] text-[#082f4f] sm:text-5xl 2xl:text-6xl">
                 七项能力，
@@ -110,6 +113,7 @@ const ServicesPage: NextPage = () => {
             <ol className="!ml-0 list-none border-t border-slate-400/60">
               {services.map(([code, name, description], index) => (
                 <li
+                  data-reveal="right"
                   key={name}
                   className="group grid gap-5 border-b border-slate-400/60 !pl-0 py-9 sm:grid-cols-[4rem_1fr_auto] sm:items-start sm:gap-7 lg:py-11"
                 >
@@ -140,7 +144,7 @@ const ServicesPage: NextPage = () => {
           </div>
 
           <div className="mx-auto grid w-full max-w-[1600px] gap-16 lg:grid-cols-[0.66fr_1.34fr] 2xl:gap-24">
-            <div className="lg:sticky lg:top-32 lg:h-fit">
+            <div data-reveal className="lg:sticky lg:top-32 lg:h-fit">
               <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary">Recruitment Flow</p>
               <h2 className="mt-7 max-w-xl text-4xl font-semibold leading-[1.12] tracking-[-0.05em] text-[#082f4f] sm:text-5xl 2xl:text-6xl">
                 每一步，
@@ -155,6 +159,7 @@ const ServicesPage: NextPage = () => {
             <ol className="relative !ml-0 list-none border-l border-slate-300">
               {recruitmentSteps.map(([name, description], index) => (
                 <li
+                  data-reveal="right"
                   key={name}
                   className="group relative grid gap-5 border-b border-slate-300 !pl-8 py-9 sm:grid-cols-[4rem_0.82fr_1.18fr] sm:items-start sm:gap-8 sm:!pl-10 lg:py-11"
                 >
@@ -183,7 +188,7 @@ const ServicesPage: NextPage = () => {
             REACH
           </div>
           <div className="mx-auto grid w-full max-w-[1600px] gap-16 lg:grid-cols-[0.72fr_1.28fr] lg:items-center 2xl:gap-24">
-            <div>
+            <div data-reveal>
               <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary">Talent Channels</p>
               <h2 className="mt-7 text-4xl font-semibold leading-[1.12] tracking-[-0.05em] text-white sm:text-5xl 2xl:text-6xl">
                 让人才触达，
@@ -198,6 +203,7 @@ const ServicesPage: NextPage = () => {
             <div className="grid gap-x-12 sm:grid-cols-2">
               {channels.map(([name, description], index) => (
                 <article
+                  data-reveal
                   key={name}
                   className="group border-b border-white/15 py-8 sm:min-h-[190px] sm:py-9"
                 >
@@ -217,7 +223,7 @@ const ServicesPage: NextPage = () => {
 
         <section className="bg-[#edecea] px-6 py-24 sm:px-10 sm:py-32 lg:px-16 2xl:px-24 2xl:py-40">
           <div className="mx-auto w-full max-w-[1600px]">
-            <div className="max-w-4xl">
+            <div data-reveal className="max-w-4xl">
               <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary">Employee Lifecycle</p>
               <h2 className="mt-7 text-4xl font-semibold leading-[1.12] tracking-[-0.05em] text-[#082f4f] sm:text-5xl 2xl:text-6xl">
                 从入职到离职，
@@ -228,7 +234,7 @@ const ServicesPage: NextPage = () => {
             <ol className="relative mt-20 grid !ml-0 list-none gap-12 lg:grid-cols-4 lg:gap-0">
               <div className="absolute left-0 right-0 top-7 hidden h-px bg-slate-400 lg:block" aria-hidden="true" />
               {employeeProcesses.map(([name, description], index) => (
-                <li key={name} className="relative !pl-0 lg:px-8 lg:first:pl-0 lg:last:pr-0">
+                <li data-reveal key={name} className="relative !pl-0 lg:px-8 lg:first:pl-0 lg:last:pr-0">
                   <span className="relative z-10 inline-flex h-14 w-14 items-center justify-center bg-[#edecea] text-sm font-semibold text-primary ring-1 ring-slate-400">
                     {String(index + 1).padStart(2, '0')}
                   </span>
@@ -241,7 +247,7 @@ const ServicesPage: NextPage = () => {
         </section>
 
         <section className="relative overflow-hidden bg-white px-6 py-24 sm:px-10 sm:py-32 lg:px-16 2xl:px-24 2xl:py-40">
-          <div className="mx-auto grid w-full max-w-[1600px] items-center gap-16 lg:grid-cols-[0.8fr_1.2fr] 2xl:gap-28">
+          <div data-reveal className="mx-auto grid w-full max-w-[1600px] items-center gap-16 lg:grid-cols-[0.8fr_1.2fr] 2xl:gap-28">
             <div className="brand-orbit relative mx-auto flex aspect-square w-full max-w-[520px] items-center justify-center rounded-full border border-slate-300">
               <div className="absolute inset-10 rounded-full border border-primary/30" aria-hidden="true" />
               <div className="text-center">
@@ -273,7 +279,7 @@ const ServicesPage: NextPage = () => {
           >
             START
           </div>
-          <div className="mx-auto flex w-full max-w-[1600px] flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
+          <div data-reveal className="mx-auto flex w-full max-w-[1600px] flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary">Start a Project</p>
               <h2 className="mt-7 max-w-5xl text-4xl font-semibold leading-[1.12] tracking-[-0.05em] text-white sm:text-5xl 2xl:text-6xl">

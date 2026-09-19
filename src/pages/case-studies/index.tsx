@@ -1,3 +1,5 @@
+import CountUp from '../../components/motion/CountUp';
+import { useScrollReveal } from '../../hooks/useScrollReveal';
 import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -35,12 +37,14 @@ const cases = [
 ];
 
 const CaseStudiesPage: NextPage = () => {
+  const motionRoot = useScrollReveal();
+
   return (
     <MainLayout
       title="企业案例 - 睐智人力"
       description="睐智人力在连锁便利零售与连锁餐饮行业的批量招聘和岗位外包案例"
     >
-      <div className="bg-white">
+      <div ref={motionRoot} className="site-motion bg-white">
         <header className="relative min-h-[82vh] overflow-hidden bg-[#061f34]">
           <Image
             src="/company/retail-case.jpg"
@@ -58,7 +62,7 @@ const CaseStudiesPage: NextPage = () => {
             CASE
           </div>
           <div className="relative mx-auto flex min-h-[82vh] w-full max-w-[1800px] items-end px-6 pb-16 pt-32 sm:px-10 sm:pb-20 lg:px-16 2xl:px-24 2xl:pb-24">
-            <div className="max-w-5xl text-white">
+            <div data-reveal className="max-w-5xl text-white">
               <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary">
                 Customer Stories
               </p>
@@ -73,7 +77,7 @@ const CaseStudiesPage: NextPage = () => {
         </header>
 
         <section className="px-6 py-24 sm:px-10 sm:py-32 lg:px-16 2xl:px-24 2xl:py-40">
-          <div className="mx-auto grid w-full max-w-[1600px] gap-12 lg:grid-cols-[0.38fr_0.62fr] lg:gap-16 2xl:gap-24">
+          <div data-reveal className="mx-auto grid w-full max-w-[1600px] gap-12 lg:grid-cols-[0.38fr_0.62fr] lg:gap-16 2xl:gap-24">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary">Selected Cases</p>
               <p className="mt-6 text-base leading-8 text-slate-500">从现场问题出发，而不是从标准答案出发。</p>
@@ -107,7 +111,7 @@ const CaseStudiesPage: NextPage = () => {
             </span>
 
             <div className="relative mx-auto grid w-full max-w-[1600px] gap-14 lg:grid-cols-[1.08fr_0.92fr] lg:items-start lg:gap-20">
-              <div className={index === 0 ? 'lg:sticky lg:top-24' : 'lg:order-2 lg:sticky lg:top-24'}>
+              <div data-reveal className={index === 0 ? 'lg:sticky lg:top-24' : 'lg:order-2 lg:sticky lg:top-24'}>
                 <div className="relative aspect-[16/11] overflow-hidden bg-slate-300">
                   <Image
                     src={item.image}
@@ -129,7 +133,7 @@ const CaseStudiesPage: NextPage = () => {
                 </div>
               </div>
 
-              <div className="lg:py-10">
+              <div data-reveal className="lg:py-10">
                 <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
                   Case File · {item.number}
                 </p>
@@ -170,7 +174,7 @@ const CaseStudiesPage: NextPage = () => {
                 <dl className="mt-12 flex flex-wrap gap-x-12 gap-y-8">
                   {item.metrics.map(([value, label]) => (
                     <div key={label}>
-                      <dd className="text-3xl font-semibold tracking-[-0.05em] text-primary sm:text-4xl">{value}</dd>
+                      <dd className="text-3xl font-semibold tracking-[-0.05em] text-primary sm:text-4xl"><CountUp value={parseInt(value, 10)} suffix="+" /></dd>
                       <dt className={index === 0 ? 'mt-3 text-sm text-slate-500' : 'mt-3 text-sm text-white/50'}>{label}</dt>
                     </div>
                   ))}
@@ -187,7 +191,7 @@ const CaseStudiesPage: NextPage = () => {
           >
             NEXT
           </div>
-          <div className="mx-auto flex w-full max-w-[1600px] flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
+          <div data-reveal className="mx-auto flex w-full max-w-[1600px] flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.22em] text-white/70">Your Project</p>
               <h2 className="mt-7 max-w-5xl text-4xl font-semibold leading-[1.12] tracking-[-0.05em] text-white sm:text-5xl 2xl:text-6xl">

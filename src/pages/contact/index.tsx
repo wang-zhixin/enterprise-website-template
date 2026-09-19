@@ -1,3 +1,5 @@
+import CountUp from '../../components/motion/CountUp';
+import { useScrollReveal } from '../../hooks/useScrollReveal';
 import { NextPage } from 'next';
 import MainLayout from '../../components/layouts/MainLayout';
 import { ContactForm } from '../../components/forms/ContactForm';
@@ -6,12 +8,14 @@ import { FORMSPREE_ID } from '../../config/formspree';
 const branches = ['上海', '常州', '杭州', '武汉', '长沙', '深圳', '北京', '镇江', '芜湖', '安庆'];
 
 const ContactPage: NextPage = () => {
+  const motionRoot = useScrollReveal();
+
   return (
     <MainLayout
       title="联系我们 - 睐智人力"
       description="联系睐智人力，咨询岗位外包、批量招聘、劳务派遣与灵活用工服务"
     >
-      <div className="flex flex-1 flex-col bg-[#061f34] pt-20">
+      <div ref={motionRoot} className="site-motion flex flex-1 flex-col bg-[#061f34] pt-20">
         <div className="relative isolate flex flex-1 items-center overflow-hidden px-6 py-12 sm:px-10 sm:py-16 lg:px-16 2xl:px-24 2xl:py-20">
           <svg
             className="pointer-events-none absolute left-0 top-0 -z-10 h-full w-full text-white/[0.06]"
@@ -27,7 +31,7 @@ const ContactPage: NextPage = () => {
           </svg>
 
           <div className="mx-auto grid w-full max-w-[1600px] gap-16 xl:grid-cols-[1.24fr_0.76fr] xl:items-start xl:gap-12 2xl:gap-20">
-            <section className="text-white xl:self-center" aria-labelledby="service-network-title">
+            <section data-reveal="left" className="text-white xl:self-center" aria-labelledby="service-network-title">
               <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary">Service Network</p>
               <h2
                 id="service-network-title"
@@ -39,7 +43,7 @@ const ContactPage: NextPage = () => {
               </h2>
               <div className="mt-12 flex items-end gap-5">
                 <span className="text-5xl font-semibold leading-none tracking-[-0.06em] text-primary sm:text-6xl">
-                  300+
+                  <CountUp value={300} suffix="+" />
                 </span>
                 <span className="pb-1 text-base font-semibold tracking-[0.08em] text-white/55">座服务城市</span>
               </div>
@@ -66,6 +70,7 @@ const ContactPage: NextPage = () => {
             </section>
 
             <section
+              data-reveal="right"
               id="business-inquiry"
               className="relative scroll-mt-24 bg-[#f7f5f2] shadow-[0_32px_90px_rgba(0,0,0,0.16)] lg:scroll-mt-28"
               aria-labelledby="contact-form-title"
